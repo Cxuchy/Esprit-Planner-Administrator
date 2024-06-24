@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 500)
+        MainWindow.resize(1000, 608)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
         MainWindow.setStyleSheet("background-color: white")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -69,10 +69,10 @@ class Ui_MainWindow(object):
         self.label_5.setPixmap(QtGui.QPixmap("design/icons/esprit_small.png"))
         self.label_5.setObjectName("label_5")
         self.label_4 = QtWidgets.QLabel(self.frame_top)
-        self.label_4.setGeometry(QtCore.QRect(10, 20, 501, 31))
+        self.label_4.setGeometry(QtCore.QRect(740, 20, 91, 31))
         font = QtGui.QFont()
-        font.setFamily("MS Shell Dlg 2")
-        font.setPointSize(18)
+        font.setFamily("System")
+        font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
         self.label_4.setFont(font)
@@ -131,46 +131,18 @@ class Ui_MainWindow(object):
 "")
         self.Btn_Menu_1.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("design/icons/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon1.addPixmap(QtGui.QPixmap("design/icons/plus.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.Btn_Menu_1.setIcon(icon1)
         self.Btn_Menu_1.setObjectName("Btn_Menu_1")
         self.verticalLayout_4.addWidget(self.Btn_Menu_1)
         self.Btn_Menu_2 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Menu_2.setMinimumSize(QtCore.QSize(0, 80))
         font = QtGui.QFont()
-        font.setPointSize(7)
+        font.setPointSize(8)
         font.setBold(True)
         font.setWeight(75)
         self.Btn_Menu_2.setFont(font)
-        self.Btn_Menu_2.setAccessibleDescription("")
-        self.Btn_Menu_2.setAutoFillBackground(False)
         self.Btn_Menu_2.setStyleSheet("QPushButton \n"
-"{\n"
-"color: rgb(255, 255, 255);\n"
-"background-color: rgb(35, 35, 35);\n"
-"border : 0px solid;\n"
-"}\n"
-"\n"
-"QPushButton:hover \n"
-"{\n"
-"background-color:#de5758;\n"
-"}\n"
-"")
-        self.Btn_Menu_2.setText("")
-        icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("design/icons/dashboard.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.Btn_Menu_2.setIcon(icon2)
-        self.Btn_Menu_2.setObjectName("Btn_Menu_2")
-        self.verticalLayout_4.addWidget(self.Btn_Menu_2)
-        self.Btn_Menu_3 = QtWidgets.QPushButton(self.frame_top_menus)
-        self.Btn_Menu_3.setMinimumSize(QtCore.QSize(0, 80))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setWeight(75)
-        self.Btn_Menu_3.setFont(font)
-        self.Btn_Menu_3.setLayoutDirection(QtCore.Qt.LeftToRight)
-        self.Btn_Menu_3.setStyleSheet("QPushButton \n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
 "background-color: rgb(35, 35, 35);\n"
@@ -182,20 +154,47 @@ class Ui_MainWindow(object):
 "background-color: #de5758;\n"
 "}\n"
 "")
+        self.Btn_Menu_2.setText("")
+        icon2 = QtGui.QIcon()
+        icon2.addPixmap(QtGui.QPixmap("design/icons/home.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.Btn_Menu_2.setIcon(icon2)
+        self.Btn_Menu_2.setObjectName("Btn_Menu_2")
+        self.verticalLayout_4.addWidget(self.Btn_Menu_2)
+        self.Btn_Menu_3 = QtWidgets.QPushButton(self.frame_top_menus)
+        self.Btn_Menu_3.setMinimumSize(QtCore.QSize(0, 80))
+        font = QtGui.QFont()
+        font.setPointSize(7)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Btn_Menu_3.setFont(font)
+        self.Btn_Menu_3.setAccessibleDescription("")
+        self.Btn_Menu_3.setAutoFillBackground(False)
+        self.Btn_Menu_3.setStyleSheet("QPushButton \n"
+"{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(35, 35, 35);\n"
+"border : 0px solid;\n"
+"}\n"
+"\n"
+"QPushButton:hover \n"
+"{\n"
+"background-color:#de5758;\n"
+"}\n"
+"")
         self.Btn_Menu_3.setText("")
         icon3 = QtGui.QIcon()
-        icon3.addPixmap(QtGui.QPixmap("design/icons/user-interface.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon3.addPixmap(QtGui.QPixmap("design/icons/dashboard.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.Btn_Menu_3.setIcon(icon3)
         self.Btn_Menu_3.setObjectName("Btn_Menu_3")
         self.verticalLayout_4.addWidget(self.Btn_Menu_3)
-        self.verticalLayout_3.addWidget(self.frame_top_menus, 0, QtCore.Qt.AlignTop)
-        self.Btn_Menu_4 = QtWidgets.QPushButton(self.frame_left_menu)
+        self.Btn_Menu_4 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Menu_4.setMinimumSize(QtCore.QSize(0, 80))
         font = QtGui.QFont()
-        font.setPointSize(8)
+        font.setPointSize(10)
         font.setBold(True)
         font.setWeight(75)
         self.Btn_Menu_4.setFont(font)
+        self.Btn_Menu_4.setLayoutDirection(QtCore.Qt.LeftToRight)
         self.Btn_Menu_4.setStyleSheet("QPushButton \n"
 "{\n"
 "color: rgb(255, 255, 255);\n"
@@ -210,24 +209,193 @@ class Ui_MainWindow(object):
 "")
         self.Btn_Menu_4.setText("")
         icon4 = QtGui.QIcon()
-        icon4.addPixmap(QtGui.QPixmap("design/icons/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon4.addPixmap(QtGui.QPixmap("design/icons/user-interface.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.Btn_Menu_4.setIcon(icon4)
         self.Btn_Menu_4.setObjectName("Btn_Menu_4")
-        self.verticalLayout_3.addWidget(self.Btn_Menu_4)
+        self.verticalLayout_4.addWidget(self.Btn_Menu_4)
+        self.verticalLayout_3.addWidget(self.frame_top_menus, 0, QtCore.Qt.AlignTop)
+        self.Btn_Logout = QtWidgets.QPushButton(self.frame_left_menu)
+        self.Btn_Logout.setMinimumSize(QtCore.QSize(0, 80))
+        font = QtGui.QFont()
+        font.setPointSize(8)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Btn_Logout.setFont(font)
+        self.Btn_Logout.setStyleSheet("QPushButton \n"
+"{\n"
+"color: rgb(255, 255, 255);\n"
+"background-color: rgb(35, 35, 35);\n"
+"border : 0px solid;\n"
+"}\n"
+"\n"
+"QPushButton:hover \n"
+"{\n"
+"background-color: #de5758;\n"
+"}\n"
+"")
+        self.Btn_Logout.setText("")
+        icon5 = QtGui.QIcon()
+        icon5.addPixmap(QtGui.QPixmap("design/icons/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.Btn_Logout.setIcon(icon5)
+        self.Btn_Logout.setObjectName("Btn_Logout")
+        self.verticalLayout_3.addWidget(self.Btn_Logout)
         self.horizontalLayout_2.addWidget(self.frame_left_menu)
         self.frame_pages = QtWidgets.QFrame(self.Content)
+        self.frame_pages.setStyleSheet("border-radius:20px")
         self.frame_pages.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.frame_pages.setFrameShadow(QtWidgets.QFrame.Raised)
         self.frame_pages.setObjectName("frame_pages")
         self.verticalLayout_5 = QtWidgets.QVBoxLayout(self.frame_pages)
         self.verticalLayout_5.setObjectName("verticalLayout_5")
         self.Pages_Widget = QtWidgets.QStackedWidget(self.frame_pages)
+        font = QtGui.QFont()
+        font.setFamily("Monotype Corsiva")
+        self.Pages_Widget.setFont(font)
+        self.Pages_Widget.setStyleSheet("background-color:rgb(35, 35, 35);\n"
+"border-radius:20px;")
         self.Pages_Widget.setObjectName("Pages_Widget")
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
         self.label = QtWidgets.QLabel(self.page_1)
-        self.label.setGeometry(QtCore.QRect(360, 140, 55, 16))
+        self.label.setGeometry(QtCore.QRect(260, 0, 351, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Banner")
+        font.setPointSize(25)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label.setFont(font)
+        self.label.setStyleSheet("color: rgb(255, 255, 255);")
         self.label.setObjectName("label")
+        self.widget_3 = QtWidgets.QWidget(self.page_1)
+        self.widget_3.setGeometry(QtCore.QRect(10, 50, 361, 461))
+        self.widget_3.setStyleSheet("background-color:white;\n"
+"border-radius:20px;")
+        self.widget_3.setObjectName("widget_3")
+        self.label_6 = QtWidgets.QLabel(self.widget_3)
+        self.label_6.setGeometry(QtCore.QRect(120, 20, 121, 51))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Display")
+        font.setPointSize(19)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_6.setFont(font)
+        self.label_6.setObjectName("label_6")
+        self.label_7 = QtWidgets.QLabel(self.widget_3)
+        self.label_7.setGeometry(QtCore.QRect(40, 110, 101, 41))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_7.setFont(font)
+        self.label_7.setObjectName("label_7")
+        self.label_8 = QtWidgets.QLabel(self.widget_3)
+        self.label_8.setGeometry(QtCore.QRect(40, 170, 111, 41))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_8.setFont(font)
+        self.label_8.setObjectName("label_8")
+        self.label_9 = QtWidgets.QLabel(self.widget_3)
+        self.label_9.setGeometry(QtCore.QRect(40, 200, 191, 41))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        self.label_9.setFont(font)
+        self.label_9.setObjectName("label_9")
+        self.hour_spinBox = QtWidgets.QSpinBox(self.widget_3)
+        self.hour_spinBox.setGeometry(QtCore.QRect(240, 180, 81, 22))
+        self.hour_spinBox.setStyleSheet("QSpinBox {\n"
+"    background-color: #f0f0f0;\n"
+"    border: 1px solid #cccccc;\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 5px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"")
+        self.hour_spinBox.setObjectName("hour_spinBox")
+        self.supervisors_spinBox = QtWidgets.QSpinBox(self.widget_3)
+        self.supervisors_spinBox.setGeometry(QtCore.QRect(240, 210, 81, 22))
+        self.supervisors_spinBox.setStyleSheet("QSpinBox {\n"
+"    background-color: #f0f0f0;\n"
+"    border: 1px solid #cccccc;\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 5px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"\n"
+"")
+        self.supervisors_spinBox.setObjectName("supervisors_spinBox")
+        self.examdate_label = QtWidgets.QLabel(self.widget_3)
+        self.examdate_label.setGeometry(QtCore.QRect(240, 120, 81, 21))
+        self.examdate_label.setObjectName("examdate_label")
+        self.submit_btn = QtWidgets.QPushButton(self.widget_3)
+        self.submit_btn.setGeometry(QtCore.QRect(250, 250, 91, 30))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.submit_btn.setFont(font)
+        self.submit_btn.setStyleSheet("QPushButton#register_btn\n"
+"{\n"
+"background-color :#eb2f30;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#register_btn:pressed\n"
+"{\n"
+"background-color :#de5758;  \n"
+"}")
+        self.submit_btn.setObjectName("submit_btn")
+        self.label_10 = QtWidgets.QLabel(self.widget_3)
+        self.label_10.setGeometry(QtCore.QRect(70, 150, 191, 16))
+        font = QtGui.QFont()
+        font.setPointSize(9)
+        self.label_10.setFont(font)
+        self.label_10.setObjectName("label_10")
+        self.widget_4 = QtWidgets.QWidget(self.page_1)
+        self.widget_4.setGeometry(QtCore.QRect(390, 50, 481, 461))
+        self.widget_4.setStyleSheet("background-color:white;\n"
+"border-radius:20px;")
+        self.widget_4.setObjectName("widget_4")
+        self.calendarWidget = QtWidgets.QCalendarWidget(self.widget_4)
+        self.calendarWidget.setGeometry(QtCore.QRect(20, 0, 441, 271))
+        self.calendarWidget.setObjectName("calendarWidget")
+        self.widget_5 = QtWidgets.QWidget(self.widget_4)
+        self.widget_5.setGeometry(QtCore.QRect(60, 300, 361, 151))
+        self.widget_5.setStyleSheet("border-radius:20px;\n"
+"background-color: rgb(255, 255, 255);")
+        self.widget_5.setObjectName("widget_5")
+        self.delete_btn = QtWidgets.QPushButton(self.widget_5)
+        self.delete_btn.setGeometry(QtCore.QRect(250, 110, 91, 30))
+        font = QtGui.QFont()
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setItalic(False)
+        font.setWeight(75)
+        self.delete_btn.setFont(font)
+        self.delete_btn.setStyleSheet("QPushButton#register_btn\n"
+"{\n"
+"background-color :#eb2f30;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#register_btn:pressed\n"
+"{\n"
+"background-color :#de5758;  \n"
+"}")
+        self.delete_btn.setObjectName("delete_btn")
+        self.calendar_details = QtWidgets.QLabel(self.widget_5)
+        self.calendar_details.setGeometry(QtCore.QRect(20, 20, 331, 81))
+        self.calendar_details.setText("")
+        self.calendar_details.setObjectName("calendar_details")
         self.Pages_Widget.addWidget(self.page_1)
         self.page_2 = QtWidgets.QWidget()
         self.page_2.setObjectName("page_2")
@@ -241,6 +409,9 @@ class Ui_MainWindow(object):
         self.label_3.setGeometry(QtCore.QRect(280, 100, 55, 16))
         self.label_3.setObjectName("label_3")
         self.Pages_Widget.addWidget(self.page_3)
+        self.page_4 = QtWidgets.QWidget()
+        self.page_4.setObjectName("page_4")
+        self.Pages_Widget.addWidget(self.page_4)
         self.verticalLayout_5.addWidget(self.Pages_Widget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
         self.verticalLayout.addWidget(self.Content)
@@ -253,8 +424,16 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.label_4.setText(_translate("MainWindow", "Welcome to EspritPlanner Dashboard"))
-        self.label.setText(_translate("MainWindow", "waaaaaa"))
+        self.label_4.setText(_translate("MainWindow", "EspritPlanner"))
+        self.label.setText(_translate("MainWindow", "Exam Calendar Manager"))
+        self.label_6.setText(_translate("MainWindow", "Add Exam "))
+        self.label_7.setText(_translate("MainWindow", "Exam Date "))
+        self.label_8.setText(_translate("MainWindow", "Exam start hour"))
+        self.label_9.setText(_translate("MainWindow", "Number of required supervisors"))
+        self.examdate_label.setText(_translate("MainWindow", "NA"))
+        self.submit_btn.setText(_translate("MainWindow", "Submit"))
+        self.label_10.setText(_translate("MainWindow", "( Pick a date from the calendar)"))
+        self.delete_btn.setText(_translate("MainWindow", "Delete"))
         self.label_2.setText(_translate("MainWindow", "2"))
         self.label_3.setText(_translate("MainWindow", "3"))
 

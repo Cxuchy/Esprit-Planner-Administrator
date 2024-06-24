@@ -11,16 +11,19 @@ from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime
 from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
 from PyQt5.QtWidgets import *
 
+import connect_database
 # GUI FILE
 from ui_main import Ui_MainWindow
 from ui_functions import *
+from connect_database import ConnectDatabase
+
+
+
 
 
 class UIFunctions(QMainWindow):
-
     def toggleMenu(self, maxWidth, enable):
         if enable:
-
             # GET WIDTH
             width = self.ui.frame_left_menu.width()
             maxExtend = maxWidth
@@ -31,7 +34,6 @@ class UIFunctions(QMainWindow):
                 widthExtended = maxExtend
             else:
                 widthExtended = standard
-
             # ANIMATION
             self.animation = QPropertyAnimation(self.ui.frame_left_menu, b"minimumWidth")
             self.animation.setDuration(400)
@@ -40,10 +42,7 @@ class UIFunctions(QMainWindow):
             self.animation.setEasingCurve(QtCore.QEasingCurve.InOutQuart)
             self.animation.start()
 
-
-
-
-class MainWindow(QMainWindow):
+class MainWindow(QMainWindow):    ########################################### Main Application Window Here #####################################################
     def __init__(self):
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
@@ -66,11 +65,51 @@ class MainWindow(QMainWindow):
         self.ui.Btn_Menu_3.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_3))
 
 
+        self.ui.Btn_Menu_4.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_4))
+
+
+
+        #Calendar selection
+        self.ui.calendarWidget.selectionChanged.connect(self.calendarDateChanged)
+
+        self.ui.submit_btn.clicked.connect(self.addExamPassage)
+
+
+       
+    def calendarDateChanged(self):
+        print("calendar date changed")
+        dateSelected = self.ui.calendarWidget.selectedDate().toPyDate()
+        self.ui.examdate_label.setText(dateSelected.strftime('%Y-%m-%d'))
+        print(dateSelected)
+        db = ConnectDatabase()
+        result = db.select_byDate(dateSelected.strftime('%Y-%m-%d'))
+        print('the result is', result)
+        # Extracting the values and converting the date to a string
+
+        values = [
+            (entry['datepassage'].strftime('%Y-%m-%d'), entry['heurepassage'])
+            for entry in result
+        ]
+
+        # Display the values
+        print(result)
+        #self.ui.calendar_details.setText(values)
+
+
+    def addExamPassage(self):
+        dateExam = self.ui.calendarWidget.selectedDate().toPyDate()
+        examStart = self.ui.hour_spinBox.text()
+        nbSupervisors = self.ui.supervisors_spinBox.text()
+        db = ConnectDatabase()
+        db.add_info(dateExam, examStart, nbSupervisors)
+        QMessageBox.information(self, "Data inserted", "Exam inserted into Database")
+
+
+
         ## SHOW ==> MAIN WINDOW
         ########################################################################
         self.show()
         ## ==> END ##
-
 
 #Login Class
 class LoginApp(QDialog):
@@ -179,23 +218,25 @@ class RegApp(QDialog):
         widget.setCurrentIndex(0)
 
 
-app = QApplication(sys.argv)
-widget = QtWidgets.QStackedWidget()
-loginform = LoginApp()
-registrationform = RegApp()
-mainwindowform = MainWindow()
 
-# main app
-widget.addWidget(loginform)
-widget.addWidget(registrationform)
-widget.addWidget(mainwindowform)
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    widget = QtWidgets.QStackedWidget()
+    loginform = LoginApp()
+    registrationform = RegApp()
+    mainwindowform = MainWindow()
 
-widget.setCurrentIndex(0)
-widget.setFixedWidth(1000)
-widget.setFixedHeight(500)
-widget.show()
+    # main app
+    widget.addWidget(loginform)
+    widget.addWidget(registrationform)
+    widget.addWidget(mainwindowform)
 
-app.exec_()
+    widget.setCurrentIndex(0)
+    widget.setFixedWidth(1000)
+    widget.setFixedHeight(608)
+    widget.show()
+
+    app.exec_()
 
 
 
