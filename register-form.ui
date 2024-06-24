@@ -37,6 +37,7 @@ border-radius:20px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -61,6 +62,7 @@ padding-left:10px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -88,6 +90,7 @@ padding-left:10px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <italic>false</italic>
@@ -116,13 +119,14 @@ background-color :#de5758;
     <property name="geometry">
      <rect>
       <x>200</x>
-      <y>480</y>
+      <y>520</y>
       <width>121</width>
       <height>29</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -159,6 +163,8 @@ background-color :#de5758;
     <property name="font">
      <font>
       <pointsize>36</pointsize>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="text">
@@ -176,6 +182,7 @@ background-color :#de5758;
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -206,6 +213,7 @@ padding-left:10px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -233,6 +241,7 @@ padding-left:10px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -257,6 +266,7 @@ padding-left:10px;</string>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>18</pointsize>
       <weight>50</weight>
       <italic>false</italic>
@@ -277,16 +287,17 @@ padding-left:10px;</string>
     <property name="geometry">
      <rect>
       <x>180</x>
-      <y>450</y>
+      <y>490</y>
       <width>181</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
+      <family>Sitka Text</family>
       <pointsize>10</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
+      <weight>75</weight>
+      <bold>true</bold>
      </font>
     </property>
     <property name="styleSheet">
