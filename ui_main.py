@@ -267,12 +267,12 @@ class Ui_MainWindow(object):
         self.label.setStyleSheet("color: rgb(255, 255, 255);")
         self.label.setObjectName("label")
         self.widget_3 = QtWidgets.QWidget(self.page_2)
-        self.widget_3.setGeometry(QtCore.QRect(10, 50, 361, 461))
+        self.widget_3.setGeometry(QtCore.QRect(10, 50, 361, 451))
         self.widget_3.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_3.setObjectName("widget_3")
         self.label_6 = QtWidgets.QLabel(self.widget_3)
-        self.label_6.setGeometry(QtCore.QRect(50, 20, 261, 51))
+        self.label_6.setGeometry(QtCore.QRect(50, 60, 261, 51))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(19)
@@ -281,28 +281,37 @@ class Ui_MainWindow(object):
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.widget_3)
-        self.label_7.setGeometry(QtCore.QRect(40, 110, 101, 41))
+        self.label_7.setGeometry(QtCore.QRect(30, 160, 101, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.widget_3)
-        self.label_8.setGeometry(QtCore.QRect(40, 170, 111, 41))
+        self.label_8.setGeometry(QtCore.QRect(30, 230, 111, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.widget_3)
-        self.label_9.setGeometry(QtCore.QRect(40, 200, 191, 41))
+        self.label_9.setGeometry(QtCore.QRect(30, 270, 211, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
         self.hour_spinBox = QtWidgets.QSpinBox(self.widget_3)
-        self.hour_spinBox.setGeometry(QtCore.QRect(240, 180, 81, 22))
+        self.hour_spinBox.setGeometry(QtCore.QRect(250, 240, 91, 22))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.hour_spinBox.setFont(font)
         self.hour_spinBox.setStyleSheet("QSpinBox {\n"
 "    background-color: #f0f0f0;\n"
 "    border: 1px solid #cccccc;\n"
@@ -314,7 +323,7 @@ class Ui_MainWindow(object):
 "")
         self.hour_spinBox.setObjectName("hour_spinBox")
         self.supervisors_spinBox = QtWidgets.QSpinBox(self.widget_3)
-        self.supervisors_spinBox.setGeometry(QtCore.QRect(240, 210, 81, 22))
+        self.supervisors_spinBox.setGeometry(QtCore.QRect(250, 280, 91, 22))
         self.supervisors_spinBox.setStyleSheet("QSpinBox {\n"
 "    background-color: #f0f0f0;\n"
 "    border: 1px solid #cccccc;\n"
@@ -332,20 +341,33 @@ class Ui_MainWindow(object):
 "")
         self.supervisors_spinBox.setObjectName("supervisors_spinBox")
         self.examdate_label = QtWidgets.QLabel(self.widget_3)
-        self.examdate_label.setGeometry(QtCore.QRect(240, 120, 81, 21))
+        self.examdate_label.setGeometry(QtCore.QRect(250, 170, 91, 21))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
+        font.setPointSize(12)
+        font.setBold(True)
+        font.setWeight(75)
         self.examdate_label.setFont(font)
         self.examdate_label.setObjectName("examdate_label")
-        self.submit_btn = QtWidgets.QPushButton(self.widget_3)
-        self.submit_btn.setGeometry(QtCore.QRect(250, 250, 91, 30))
+        self.label_10 = QtWidgets.QLabel(self.widget_3)
+        self.label_10.setGeometry(QtCore.QRect(60, 200, 191, 16))
         font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(9)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_10.setFont(font)
+        self.label_10.setObjectName("label_10")
+        self.submit_btn = QtWidgets.QPushButton(self.widget_3)
+        self.submit_btn.setGeometry(QtCore.QRect(260, 330, 81, 29))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
         font.setPointSize(10)
         font.setBold(True)
-        font.setItalic(False)
         font.setWeight(75)
         self.submit_btn.setFont(font)
-        self.submit_btn.setStyleSheet("QPushButton#register_btn\n"
+        self.submit_btn.setStyleSheet("\n"
+"QPushButton#log_in_btn\n"
 "{\n"
 "background-color :#eb2f30;  \n"
 "color :white;\n"
@@ -353,82 +375,114 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton#register_btn:pressed\n"
+"QPushButton#log_in_btn:pressed\n"
 "{\n"
 "background-color :#de5758;  \n"
 "}")
         self.submit_btn.setObjectName("submit_btn")
-        self.label_10 = QtWidgets.QLabel(self.widget_3)
-        self.label_10.setGeometry(QtCore.QRect(70, 150, 191, 16))
-        font = QtGui.QFont()
-        font.setFamily("Sitka Text")
-        font.setPointSize(9)
-        self.label_10.setFont(font)
-        self.label_10.setObjectName("label_10")
         self.widget_4 = QtWidgets.QWidget(self.page_2)
-        self.widget_4.setGeometry(QtCore.QRect(390, 50, 481, 461))
+        self.widget_4.setGeometry(QtCore.QRect(390, 50, 481, 451))
         self.widget_4.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_4.setObjectName("widget_4")
         self.calendarWidget = QtWidgets.QCalendarWidget(self.widget_4)
-        self.calendarWidget.setGeometry(QtCore.QRect(20, 20, 441, 271))
+        self.calendarWidget.setGeometry(QtCore.QRect(20, 10, 441, 211))
         self.calendarWidget.setStyleSheet("color:black;\n"
 "border-radius:20px;")
         self.calendarWidget.setObjectName("calendarWidget")
-        self.widget_5 = QtWidgets.QWidget(self.widget_4)
-        self.widget_5.setGeometry(QtCore.QRect(60, 300, 361, 151))
-        self.widget_5.setStyleSheet("border-radius:20px;\n"
-"background-color: rgb(255, 255, 255);")
-        self.widget_5.setObjectName("widget_5")
-        self.delete_btn = QtWidgets.QPushButton(self.widget_5)
-        self.delete_btn.setGeometry(QtCore.QRect(250, 110, 91, 30))
-        font = QtGui.QFont()
-        font.setPointSize(10)
-        font.setBold(True)
-        font.setItalic(False)
-        font.setWeight(75)
-        self.delete_btn.setFont(font)
-        self.delete_btn.setStyleSheet("QPushButton#register_btn\n"
-"{\n"
-"background-color :#eb2f30;  \n"
-"color :white;\n"
-"border-radius : 5px;\n"
-"\n"
+        self.tableWidget = QtWidgets.QTableWidget(self.widget_4)
+        self.tableWidget.setGeometry(QtCore.QRect(20, 260, 450, 181))
+        self.tableWidget.setStyleSheet("QTableView {\n"
+"    color: black;\n"
+"    gridline-color: black;\n"
+"    border-color: rgb(242, 128, 133);\n"
+"    font: 10px;\n"
 "}\n"
-"\n"
-"QPushButton#register_btn:pressed\n"
-"{\n"
-"background-color :#de5758;  \n"
-"}")
-        self.delete_btn.setObjectName("delete_btn")
-        self.calendar_details = QtWidgets.QLabel(self.widget_5)
-        self.calendar_details.setGeometry(QtCore.QRect(20, 20, 331, 81))
-        self.calendar_details.setText("")
-        self.calendar_details.setObjectName("calendar_details")
-        self.label_11 = QtWidgets.QLabel(self.widget_5)
-        self.label_11.setGeometry(QtCore.QRect(50, 30, 261, 51))
-        font = QtGui.QFont()
-        font.setFamily("Sitka Text")
-        font.setPointSize(14)
-        font.setBold(False)
-        font.setWeight(50)
-        self.label_11.setFont(font)
-        self.label_11.setObjectName("label_11")
+"QHeaderView::section {\n"
+"    background-color: rgb(71, 153, 176);\n"
+"    color: white;\n"
+"    height: 35px;\n"
+"    font: 14px;\n"
+"}\n"
+"QTableView::item:focus{\n"
+"    border: 2px solid rgb(242, 128, 133);\n"
+"    background-color: rgb(255, 254, 229);\n"
+"}\n"
+"QScrollBar:vertical {\n"
+"    background: rgb(188, 224, 235);\n"
+"}\n"
+" QScrollBar::handle:vertical {\n"
+"    background: rgb(71, 153, 176);\n"
+" }\n"
+"QScrollBar:horizontal {\n"
+"    background: rgb(188, 224, 235);\n"
+"}\n"
+" QScrollBar::handle:horizontal {\n"
+"    background: rgb(71, 153, 176);\n"
+" }")
+        self.tableWidget.setObjectName("tableWidget")
+        self.tableWidget.setColumnCount(3)
+        self.tableWidget.setRowCount(0)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(0, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(1, item)
+        item = QtWidgets.QTableWidgetItem()
+        self.tableWidget.setHorizontalHeaderItem(2, item)
         self.Pages_Widget.addWidget(self.page_2)
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
-        self.label_2 = QtWidgets.QLabel(self.page_1)
-        self.label_2.setGeometry(QtCore.QRect(330, 120, 55, 16))
-        self.label_2.setObjectName("label_2")
+        self.widget_2 = QtWidgets.QWidget(self.page_1)
+        self.widget_2.setGeometry(QtCore.QRect(10, 50, 861, 451))
+        self.widget_2.setStyleSheet("background-color:white;\n"
+"border-radius:20px;")
+        self.widget_2.setObjectName("widget_2")
+        self.label_12 = QtWidgets.QLabel(self.page_1)
+        self.label_12.setGeometry(QtCore.QRect(380, 0, 91, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(21)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_12.setFont(font)
+        self.label_12.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_12.setObjectName("label_12")
         self.Pages_Widget.addWidget(self.page_1)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
-        self.label_3 = QtWidgets.QLabel(self.page_3)
-        self.label_3.setGeometry(QtCore.QRect(280, 100, 55, 16))
-        self.label_3.setObjectName("label_3")
+        self.widget = QtWidgets.QWidget(self.page_3)
+        self.widget.setGeometry(QtCore.QRect(10, 50, 860, 451))
+        self.widget.setStyleSheet("background-color:white;\n"
+"border-radius:20px;")
+        self.widget.setObjectName("widget")
+        self.label_14 = QtWidgets.QLabel(self.page_3)
+        self.label_14.setGeometry(QtCore.QRect(360, 0, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(21)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_14.setFont(font)
+        self.label_14.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_14.setObjectName("label_14")
         self.Pages_Widget.addWidget(self.page_3)
         self.page_4 = QtWidgets.QWidget()
         self.page_4.setObjectName("page_4")
+        self.widget_6 = QtWidgets.QWidget(self.page_4)
+        self.widget_6.setGeometry(QtCore.QRect(10, 50, 861, 451))
+        self.widget_6.setStyleSheet("background-color:white;\n"
+"border-radius:20px;")
+        self.widget_6.setObjectName("widget_6")
+        self.label_15 = QtWidgets.QLabel(self.page_4)
+        self.label_15.setGeometry(QtCore.QRect(310, 0, 291, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(21)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_15.setFont(font)
+        self.label_15.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_15.setObjectName("label_15")
         self.Pages_Widget.addWidget(self.page_4)
         self.verticalLayout_5.addWidget(self.Pages_Widget)
         self.horizontalLayout_2.addWidget(self.frame_pages)
@@ -436,7 +490,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Pages_Widget.setCurrentIndex(1)
+        self.Pages_Widget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -449,12 +503,17 @@ class Ui_MainWindow(object):
         self.label_8.setText(_translate("MainWindow", "Exam start hour"))
         self.label_9.setText(_translate("MainWindow", "Number of required supervisors"))
         self.examdate_label.setText(_translate("MainWindow", "NA"))
-        self.submit_btn.setText(_translate("MainWindow", "Submit"))
         self.label_10.setText(_translate("MainWindow", "( Pick a date from the calendar)"))
-        self.delete_btn.setText(_translate("MainWindow", "Delete"))
-        self.label_11.setText(_translate("MainWindow", "Lehne selected date exams"))
-        self.label_2.setText(_translate("MainWindow", "1"))
-        self.label_3.setText(_translate("MainWindow", "3"))
+        self.submit_btn.setText(_translate("MainWindow", "Submit"))
+        item = self.tableWidget.horizontalHeaderItem(0)
+        item.setText(_translate("MainWindow", "Exam Date"))
+        item = self.tableWidget.horizontalHeaderItem(1)
+        item.setText(_translate("MainWindow", "Passage Hour "))
+        item = self.tableWidget.horizontalHeaderItem(2)
+        item.setText(_translate("MainWindow", "Superivisors Required"))
+        self.label_12.setText(_translate("MainWindow", "Home"))
+        self.label_14.setText(_translate("MainWindow", "Statistics"))
+        self.label_15.setText(_translate("MainWindow", "Professors Requests "))
 
 
 if __name__ == "__main__":

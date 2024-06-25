@@ -74,9 +74,18 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
         self.ui.submit_btn.clicked.connect(self.addExamPassage)
 
+        self.ui.tableWidget.setColumnWidth(0,120)
+        self.ui.tableWidget.setColumnWidth(1,120)
+        self.ui.tableWidget.setColumnWidth(2,150)
+
+
+
+
+
 
        
     def calendarDateChanged(self):
+        self.ui.tableWidget.clear()
         print("calendar date changed")
         dateSelected = self.ui.calendarWidget.selectedDate().toPyDate()
         self.ui.examdate_label.setText(dateSelected.strftime('%Y-%m-%d'))
@@ -86,14 +95,13 @@ class MainWindow(QMainWindow):    ########################################### Ma
         print('the result is', result)
         # Extracting the values and converting the date to a string
 
-        values = [
-            (entry['datepassage'].strftime('%Y-%m-%d'), entry['heurepassage'])
-            for entry in result
-        ]
-
-        # Display the values
-        print(result)
-        #self.ui.calendar_details.setText(values)
+        self.ui.tableWidget.setRowCount(len(result))
+        row = 0
+        for entry in result:
+            self.ui.tableWidget.setItem(row,0,QTableWidgetItem(entry["datepassage"].strftime('%Y-%m-%d')))
+            self.ui.tableWidget.setItem(row,1,QTableWidgetItem(str(entry["heurepassage"])))
+            self.ui.tableWidget.setItem(row,2,QTableWidgetItem(str(entry["nbprof_required"])))
+            row+=1
 
 
     def addExamPassage(self):

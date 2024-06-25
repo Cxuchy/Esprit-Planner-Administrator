@@ -42,10 +42,18 @@ border-radius:20px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(47,49,52,200);
-color:rgb(255,255,255);
-border-radius:6px;
-padding-left:10px;</string>
+     <string notr="true">QLineEdit
+{
+background:#ffeeef;
+border:2px solid #eb2f30;
+border-radius:10px;
+color:black;
+}
+QLineEdit:focus
+{
+border:2px solid #FBAD25;
+
+}</string>
     </property>
     <property name="placeholderText">
      <string>Enter Identifier</string>
@@ -67,10 +75,18 @@ padding-left:10px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(47,49,52,200);
-color:rgb(255,255,255);
-border-radius:6px;
-padding-left:10px;</string>
+     <string notr="true">QLineEdit
+{
+background:#ffeeef;
+border:2px solid #eb2f30;
+border-radius:10px;
+color:black;
+}
+QLineEdit:focus
+{
+border:2px solid #FBAD25;
+
+}</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
@@ -187,10 +203,18 @@ background-color :#de5758;
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(47,49,52,200);
-color:rgb(255,255,255);
-border-radius:6px;
-padding-left:10px;</string>
+     <string notr="true">QLineEdit
+{
+background:#ffeeef;
+border:2px solid #eb2f30;
+border-radius:10px;
+color:black;
+}
+QLineEdit:focus
+{
+border:2px solid #FBAD25;
+
+}</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Normal</enum>
@@ -218,10 +242,18 @@ padding-left:10px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(47,49,52,200);
-color:rgb(255,255,255);
-border-radius:6px;
-padding-left:10px;</string>
+     <string notr="true">QLineEdit
+{
+background:#ffeeef;
+border:2px solid #eb2f30;
+border-radius:10px;
+color:black;
+}
+QLineEdit:focus
+{
+border:2px solid #FBAD25;
+
+}</string>
     </property>
     <property name="echoMode">
      <enum>QLineEdit::Normal</enum>
@@ -246,10 +278,18 @@ padding-left:10px;</string>
      </font>
     </property>
     <property name="styleSheet">
-     <string notr="true">background-color:rgba(47,49,52,200);
-color:rgb(255,255,255);
-border-radius:6px;
-padding-left:10px;</string>
+     <string notr="true">QLineEdit
+{
+background:#ffeeef;
+border:2px solid #eb2f30;
+border-radius:10px;
+color:black;
+}
+QLineEdit:focus
+{
+border:2px solid #FBAD25;
+
+}</string>
     </property>
     <property name="placeholderText">
      <string>Enter Full Name</string>
