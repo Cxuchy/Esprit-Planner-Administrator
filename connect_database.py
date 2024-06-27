@@ -6,7 +6,7 @@ class ConnectDatabase:
             host="localhost",
             user="root",
             password="",
-            database="espritplanner"
+            database="espritexamplanner"
         )
         if self.con.is_connected():
             print("Successfully connected to the database")
@@ -21,7 +21,7 @@ class ConnectDatabase:
     def add_info(self,datepassage,heurepassage,nbprof_required):
         self.connect_db()
 
-        sql = f"""INSERT INTO passageexam (datepassage,heurepassage,nbprof_required) VALUES ('{datepassage}','{heurepassage}','{nbprof_required}'); """
+        sql = f"""INSERT INTO passageexams (datepassage,heurepassage,nbprof_required) VALUES ('{datepassage}','{heurepassage}','{nbprof_required}'); """
         try:
             self.cursor.execute(sql)
             self.con.commit()
@@ -37,9 +37,9 @@ class ConnectDatabase:
     def update_info(self,passageExamID,datepassage,heurepassage,nbprof_required):
         self.connect_db()
         sql = f"""
-                    UPDATE passageexam
+                    UPDATE passageexams
                         SET datepassage='{datepassage}', heurepassage='{heurepassage}', nbprof_required='{nbprof_required}'
-                        WHERE passageExamID={passageExamID};
+                        WHERE id={passageExamID};
                 """
         try:
             self.cursor.execute(sql)
@@ -54,7 +54,7 @@ class ConnectDatabase:
 
     def display_all(self):
         self.connect_db()
-        sql = f"""SELECT * FROM passageexam;"""
+        sql = f"""SELECT * FROM passageexams;"""
 
         try:
             self.cursor.execute(sql)
@@ -68,7 +68,7 @@ class ConnectDatabase:
 
     def select_byDate(self,datepassage):
         self.connect_db()
-        sql = f"""SELECT * FROM passageexam WHERE datepassage='{datepassage}';"""
+        sql = f"""SELECT * FROM passageexams WHERE datepassage='{datepassage}';"""
 
         try:
             self.cursor.execute(sql)
@@ -84,7 +84,7 @@ class ConnectDatabase:
     def delete_info(self,passageExamID):
         self.connect_db()
         sql = """
-        DELETE FROM passageexam WHERE passageExamID='{passageExamID}';
+        DELETE FROM passageexams WHERE id='{passageExamID}';
         """
         try:
             # Execute the SQL query for deleting information

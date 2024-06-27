@@ -797,9 +797,9 @@ border-radius:20px;</string>
                <property name="geometry">
                 <rect>
                  <x>20</x>
-                 <y>260</y>
+                 <y>280</y>
                  <width>450</width>
-                 <height>181</height>
+                 <height>161</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -847,6 +847,27 @@ QScrollBar:horizontal {
                  <string>Superivisors Required</string>
                 </property>
                </column>
+              </widget>
+              <widget class="QLabel" name="label_11">
+               <property name="geometry">
+                <rect>
+                 <x>170</x>
+                 <y>220</y>
+                 <width>131</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>19</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Exams list</string>
+               </property>
               </widget>
              </widget>
             </widget>

@@ -89,10 +89,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
         print("calendar date changed")
         dateSelected = self.ui.calendarWidget.selectedDate().toPyDate()
         self.ui.examdate_label.setText(dateSelected.strftime('%Y-%m-%d'))
-        print(dateSelected)
+        #print(dateSelected)
         db = ConnectDatabase()
         result = db.select_byDate(dateSelected.strftime('%Y-%m-%d'))
-        print('the result is', result)
+        #print('the result is', result)
         # Extracting the values and converting the date to a string
 
         self.ui.tableWidget.setRowCount(len(result))
@@ -138,7 +138,7 @@ class LoginApp(QDialog):
             host="localhost",
             user="root",
             password="",
-            database="espritplanner"
+            database="espritexamplanner"
         )
         if db.is_connected():
             print("Successfully connected to the database")
@@ -146,7 +146,7 @@ class LoginApp(QDialog):
             print("db not connected")
 
         cursor = db.cursor()
-        cursor.execute("select * from user where email='"+ email +"' and password='"+ pw +"'")
+        cursor.execute("select * from users where email='"+ email +"' and password='"+ pw +"'")
         result = cursor.fetchone() # collected data
 
         #clearing text box
@@ -198,7 +198,7 @@ class RegApp(QDialog):
             host="localhost",
             user="root",
             password="",
-            database="espritplanner"
+            database="espritexamplanner"
         )
         if db.is_connected():
             print("Successfully connected to the database")
@@ -206,13 +206,13 @@ class RegApp(QDialog):
             print("db not connected")
 
         cursor = db.cursor()
-        cursor.execute("select * from user where email='" + email + "' and password='" + pw + "'")
+        cursor.execute("select * from users where email='" + email + "' and password='" + pw + "'")
         result = cursor.fetchone()  # collected data
 
         if result:
             QMessageBox.information(self,"Information","User already existing")
         else:
-            cursor.execute("insert into user(identifiant,nom,email,password,phonenumber,role) values('"+ id +"','"+ name +"','"+ email +"','"+ pw +"','"+ phone_numb +"','"+ role +"')")
+            cursor.execute("insert into users(identifier,nom,email,password,phonenumber,role) values('"+ id +"','"+ name +"','"+ email +"','"+ pw +"','"+ phone_numb +"','"+ role +"')")
             db.commit()
             QMessageBox.information(self,"Information","User Created , you can log in now")
             #clearing fields content after inserting
