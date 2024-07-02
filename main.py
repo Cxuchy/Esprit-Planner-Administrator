@@ -47,6 +47,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         QMainWindow.__init__(self)
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
+        db = ConnectDatabase()
 
         ## TOGGLE/BURGUER MENU
         ########################################################################
@@ -68,7 +69,6 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.Btn_Menu_4.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_4))
 
 
-
         #Calendar selection
         self.ui.calendarWidget.selectionChanged.connect(self.calendarDateChanged)
 
@@ -78,9 +78,48 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.tableWidget.setColumnWidth(1,120)
         self.ui.tableWidget.setColumnWidth(2,150)
 
+        # hiding the frame for resolution message
+        self.ui.resolution_message_frame.hide()
+        self.ui.accept_btn.clicked.connect(self.acceptReq)
+        self.ui.reject_btn.clicked.connect(self.declineReq)
+
+
+        #closing widget
+        self.ui.close_resolution_frame.clicked.connect(self.closeResolution)
+
+        #filling the complaints table
+        complaints = db.display_pending_complaints()
+        print(complaints)
+        self.ui.complaints_table.setRowCount(len(complaints))
+        row = 0
+        for entry in complaints:
+
+            if entry["submissionDate"] is None:
+                subDate = "NA"
+            else :
+                subDate = entry["submissionDate"].strftime('%Y-%m-%d')
+            if entry["resolutionDate"] is None:
+                resDate = "NA"
+            else:
+                resDate = entry["resolutionDate"].strftime('%Y-%m-%d')
+
+            self.ui.complaints_table.setItem(row, 0, QTableWidgetItem(subDate))
+            self.ui.complaints_table.setItem(row, 1, QTableWidgetItem(str(entry["submitMessage"])))
+            self.ui.complaints_table.setItem(row, 2, QTableWidgetItem(str(entry["status"])))
+            self.ui.complaints_table.setItem(row, 3, QTableWidgetItem(resDate))
+            self.ui.complaints_table.setItem(row, 4, QTableWidgetItem(str(entry["resolutionMessage"])))
+            row += 1
 
 
 
+
+    def closeResolution(self):
+        self.ui.resolution_message_frame.hide()
+
+    def acceptReq(self):
+        self.ui.resolution_message_frame.show()
+    def declineReq(self):
+        self.ui.resolution_message_frame.show()
 
 
 
