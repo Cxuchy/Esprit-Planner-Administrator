@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1000, 608)
+        MainWindow.resize(1001, 608)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
         MainWindow.setStyleSheet("background-color: white")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -272,7 +272,7 @@ class Ui_MainWindow(object):
 "border-radius:20px;")
         self.widget_3.setObjectName("widget_3")
         self.label_6 = QtWidgets.QLabel(self.widget_3)
-        self.label_6.setGeometry(QtCore.QRect(50, 60, 261, 51))
+        self.label_6.setGeometry(QtCore.QRect(50, 90, 261, 51))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(19)
@@ -281,7 +281,7 @@ class Ui_MainWindow(object):
         self.label_6.setFont(font)
         self.label_6.setObjectName("label_6")
         self.label_7 = QtWidgets.QLabel(self.widget_3)
-        self.label_7.setGeometry(QtCore.QRect(30, 160, 101, 41))
+        self.label_7.setGeometry(QtCore.QRect(30, 180, 101, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
@@ -290,7 +290,7 @@ class Ui_MainWindow(object):
         self.label_7.setFont(font)
         self.label_7.setObjectName("label_7")
         self.label_8 = QtWidgets.QLabel(self.widget_3)
-        self.label_8.setGeometry(QtCore.QRect(30, 230, 111, 41))
+        self.label_8.setGeometry(QtCore.QRect(30, 250, 111, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
@@ -299,7 +299,7 @@ class Ui_MainWindow(object):
         self.label_8.setFont(font)
         self.label_8.setObjectName("label_8")
         self.label_9 = QtWidgets.QLabel(self.widget_3)
-        self.label_9.setGeometry(QtCore.QRect(30, 270, 211, 41))
+        self.label_9.setGeometry(QtCore.QRect(30, 300, 211, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
@@ -308,7 +308,7 @@ class Ui_MainWindow(object):
         self.label_9.setFont(font)
         self.label_9.setObjectName("label_9")
         self.hour_spinBox = QtWidgets.QSpinBox(self.widget_3)
-        self.hour_spinBox.setGeometry(QtCore.QRect(250, 240, 91, 22))
+        self.hour_spinBox.setGeometry(QtCore.QRect(250, 260, 91, 22))
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.hour_spinBox.setFont(font)
@@ -323,7 +323,7 @@ class Ui_MainWindow(object):
 "")
         self.hour_spinBox.setObjectName("hour_spinBox")
         self.supervisors_spinBox = QtWidgets.QSpinBox(self.widget_3)
-        self.supervisors_spinBox.setGeometry(QtCore.QRect(250, 280, 91, 22))
+        self.supervisors_spinBox.setGeometry(QtCore.QRect(250, 310, 91, 22))
         self.supervisors_spinBox.setStyleSheet("QSpinBox {\n"
 "    background-color: #f0f0f0;\n"
 "    border: 1px solid #cccccc;\n"
@@ -341,7 +341,7 @@ class Ui_MainWindow(object):
 "")
         self.supervisors_spinBox.setObjectName("supervisors_spinBox")
         self.examdate_label = QtWidgets.QLabel(self.widget_3)
-        self.examdate_label.setGeometry(QtCore.QRect(250, 170, 91, 21))
+        self.examdate_label.setGeometry(QtCore.QRect(250, 190, 91, 21))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(12)
@@ -350,7 +350,7 @@ class Ui_MainWindow(object):
         self.examdate_label.setFont(font)
         self.examdate_label.setObjectName("examdate_label")
         self.label_10 = QtWidgets.QLabel(self.widget_3)
-        self.label_10.setGeometry(QtCore.QRect(60, 200, 191, 16))
+        self.label_10.setGeometry(QtCore.QRect(60, 220, 191, 16))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(9)
@@ -359,7 +359,7 @@ class Ui_MainWindow(object):
         self.label_10.setFont(font)
         self.label_10.setObjectName("label_10")
         self.submit_btn = QtWidgets.QPushButton(self.widget_3)
-        self.submit_btn.setGeometry(QtCore.QRect(260, 330, 81, 29))
+        self.submit_btn.setGeometry(QtCore.QRect(260, 370, 81, 29))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
@@ -367,7 +367,7 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.submit_btn.setFont(font)
         self.submit_btn.setStyleSheet("\n"
-"QPushButton#log_in_btn\n"
+"QPushButton#submit_btn\n"
 "{\n"
 "background-color :#eb2f30;  \n"
 "color :white;\n"
@@ -375,13 +375,22 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton#log_in_btn:pressed\n"
+"QPushButton#submit_btn:pressed\n"
 "{\n"
 "background-color :#de5758;  \n"
 "}")
         self.submit_btn.setObjectName("submit_btn")
+        self.close_add_exam = QtWidgets.QPushButton(self.widget_3)
+        self.close_add_exam.setGeometry(QtCore.QRect(320, 20, 25, 23))
+        self.close_add_exam.setStyleSheet("border-radius : 10px solid;\n"
+"border:2px solid black;")
+        self.close_add_exam.setText("")
+        icon6 = QtGui.QIcon()
+        icon6.addPixmap(QtGui.QPixmap("design/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        self.close_add_exam.setIcon(icon6)
+        self.close_add_exam.setObjectName("close_add_exam")
         self.widget_4 = QtWidgets.QWidget(self.page_2)
-        self.widget_4.setGeometry(QtCore.QRect(390, 50, 481, 451))
+        self.widget_4.setGeometry(QtCore.QRect(10, 50, 861, 451))
         self.widget_4.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_4.setObjectName("widget_4")
@@ -391,7 +400,7 @@ class Ui_MainWindow(object):
 "border-radius:20px;")
         self.calendarWidget.setObjectName("calendarWidget")
         self.tableWidget = QtWidgets.QTableWidget(self.widget_4)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 280, 450, 161))
+        self.tableWidget.setGeometry(QtCore.QRect(20, 310, 450, 111))
         self.tableWidget.setStyleSheet("QTableView {\n"
 "    color: black;\n"
 "    gridline-color: black;\n"
@@ -430,7 +439,7 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
         self.label_11 = QtWidgets.QLabel(self.widget_4)
-        self.label_11.setGeometry(QtCore.QRect(170, 220, 131, 51))
+        self.label_11.setGeometry(QtCore.QRect(170, 260, 131, 51))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(19)
@@ -438,6 +447,32 @@ class Ui_MainWindow(object):
         font.setWeight(75)
         self.label_11.setFont(font)
         self.label_11.setObjectName("label_11")
+        self.add_exam_btn = QtWidgets.QPushButton(self.widget_4)
+        self.add_exam_btn.setGeometry(QtCore.QRect(370, 240, 101, 29))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.add_exam_btn.setFont(font)
+        self.add_exam_btn.setStyleSheet("\n"
+"QPushButton#add_exam_btn\n"
+"{\n"
+"background-color :#eb2f30;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#add_exam_btn:pressed\n"
+"{\n"
+"background-color :#de5758;  \n"
+"}")
+        self.add_exam_btn.setIcon(icon2)
+        self.add_exam_btn.setObjectName("add_exam_btn")
+        self.widget_3.raise_()
+        self.label.raise_()
+        self.widget_4.raise_()
         self.Pages_Widget.addWidget(self.page_2)
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
@@ -487,7 +522,7 @@ class Ui_MainWindow(object):
         self.complaints_table.setStyleSheet("")
         self.complaints_table.setLineWidth(1)
         self.complaints_table.setDragEnabled(False)
-        self.complaints_table.setColumnCount(5)
+        self.complaints_table.setColumnCount(6)
         self.complaints_table.setObjectName("complaints_table")
         self.complaints_table.setRowCount(0)
         item = QtWidgets.QTableWidgetItem()
@@ -500,8 +535,43 @@ class Ui_MainWindow(object):
         self.complaints_table.setHorizontalHeaderItem(3, item)
         item = QtWidgets.QTableWidgetItem()
         self.complaints_table.setHorizontalHeaderItem(4, item)
-        self.reject_btn = QtWidgets.QPushButton(self.widget_6)
-        self.reject_btn.setGeometry(QtCore.QRect(460, 390, 120, 41))
+        item = QtWidgets.QTableWidgetItem()
+        self.complaints_table.setHorizontalHeaderItem(5, item)
+        self.resolution_message_frame = QtWidgets.QFrame(self.widget_6)
+        self.resolution_message_frame.setEnabled(True)
+        self.resolution_message_frame.setGeometry(QtCore.QRect(290, 70, 321, 271))
+        self.resolution_message_frame.setAutoFillBackground(False)
+        self.resolution_message_frame.setStyleSheet("border-radius : 10px solid;\n"
+"border:2px solid black;\n"
+"")
+        self.resolution_message_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
+        self.resolution_message_frame.setFrameShadow(QtWidgets.QFrame.Raised)
+        self.resolution_message_frame.setLineWidth(12)
+        self.resolution_message_frame.setObjectName("resolution_message_frame")
+        self.resolution_field = QtWidgets.QTextEdit(self.resolution_message_frame)
+        self.resolution_field.setGeometry(QtCore.QRect(30, 70, 261, 91))
+        self.resolution_field.setStyleSheet("background-color : white")
+        self.resolution_field.setObjectName("resolution_field")
+        self.label_16 = QtWidgets.QLabel(self.resolution_message_frame)
+        self.label_16.setGeometry(QtCore.QRect(40, 20, 241, 41))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(17)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_16.setFont(font)
+        self.label_16.setStyleSheet("border:2px solid white;\n"
+"")
+        self.label_16.setObjectName("label_16")
+        self.close_resolution_frame = QtWidgets.QPushButton(self.resolution_message_frame)
+        self.close_resolution_frame.setGeometry(QtCore.QRect(285, 10, 25, 23))
+        self.close_resolution_frame.setStyleSheet("border-radius : 10px solid;\n"
+"border:2px solid black;")
+        self.close_resolution_frame.setText("")
+        self.close_resolution_frame.setIcon(icon6)
+        self.close_resolution_frame.setObjectName("close_resolution_frame")
+        self.reject_btn = QtWidgets.QPushButton(self.resolution_message_frame)
+        self.reject_btn.setGeometry(QtCore.QRect(170, 210, 120, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(11)
@@ -522,8 +592,8 @@ class Ui_MainWindow(object):
 "background-color :#de5758;  \n"
 "}")
         self.reject_btn.setObjectName("reject_btn")
-        self.accept_btn = QtWidgets.QPushButton(self.widget_6)
-        self.accept_btn.setGeometry(QtCore.QRect(290, 390, 120, 41))
+        self.accept_btn = QtWidgets.QPushButton(self.resolution_message_frame)
+        self.accept_btn.setGeometry(QtCore.QRect(40, 210, 120, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(11)
@@ -544,31 +614,16 @@ class Ui_MainWindow(object):
 "background-color :#55ff7f;  \n"
 "}")
         self.accept_btn.setObjectName("accept_btn")
-        self.resolution_message_frame = QtWidgets.QFrame(self.widget_6)
-        self.resolution_message_frame.setEnabled(True)
-        self.resolution_message_frame.setGeometry(QtCore.QRect(290, 70, 321, 271))
-        self.resolution_message_frame.setAutoFillBackground(False)
-        self.resolution_message_frame.setStyleSheet("border-radius : 10px solid;\n"
-"border:2px solid black;\n"
-"")
-        self.resolution_message_frame.setFrameShape(QtWidgets.QFrame.StyledPanel)
-        self.resolution_message_frame.setFrameShadow(QtWidgets.QFrame.Raised)
-        self.resolution_message_frame.setLineWidth(12)
-        self.resolution_message_frame.setObjectName("resolution_message_frame")
-        self.resolution_field = QtWidgets.QTextEdit(self.resolution_message_frame)
-        self.resolution_field.setGeometry(QtCore.QRect(30, 70, 261, 91))
-        self.resolution_field.setStyleSheet("background-color : white")
-        self.resolution_field.setObjectName("resolution_field")
-        self.submit_msg_btn = QtWidgets.QPushButton(self.resolution_message_frame)
-        self.submit_msg_btn.setGeometry(QtCore.QRect(100, 190, 120, 41))
+        self.resolve_btn = QtWidgets.QPushButton(self.widget_6)
+        self.resolve_btn.setGeometry(QtCore.QRect(380, 390, 120, 41))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(11)
         font.setBold(True)
         font.setWeight(75)
-        self.submit_msg_btn.setFont(font)
-        self.submit_msg_btn.setStyleSheet("\n"
-"QPushButton#submit_msg_btn\n"
+        self.resolve_btn.setFont(font)
+        self.resolve_btn.setStyleSheet("\n"
+"QPushButton#resolve_btn\n"
 "{\n"
 "background-color: #0055ff;  \n"
 "color :white;\n"
@@ -576,31 +631,11 @@ class Ui_MainWindow(object):
 "\n"
 "}\n"
 "\n"
-"QPushButton#submit_msg_btn:pressed\n"
+"QPushButton#resolve_btn:pressed\n"
 "{\n"
 "background-color :#4f93ff;  \n"
 "}")
-        self.submit_msg_btn.setObjectName("submit_msg_btn")
-        self.label_16 = QtWidgets.QLabel(self.resolution_message_frame)
-        self.label_16.setGeometry(QtCore.QRect(40, 20, 241, 41))
-        font = QtGui.QFont()
-        font.setFamily("Sitka Text")
-        font.setPointSize(17)
-        font.setBold(True)
-        font.setWeight(75)
-        self.label_16.setFont(font)
-        self.label_16.setStyleSheet("border:2px solid white;\n"
-"")
-        self.label_16.setObjectName("label_16")
-        self.close_resolution_frame = QtWidgets.QPushButton(self.resolution_message_frame)
-        self.close_resolution_frame.setGeometry(QtCore.QRect(285, 10, 25, 23))
-        self.close_resolution_frame.setStyleSheet("border-radius : 10px solid;\n"
-"border:2px solid black;")
-        self.close_resolution_frame.setText("")
-        icon6 = QtGui.QIcon()
-        icon6.addPixmap(QtGui.QPixmap("design/icons/close.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.close_resolution_frame.setIcon(icon6)
-        self.close_resolution_frame.setObjectName("close_resolution_frame")
+        self.resolve_btn.setObjectName("resolve_btn")
         self.label_15 = QtWidgets.QLabel(self.page_4)
         self.label_15.setGeometry(QtCore.QRect(250, 0, 451, 41))
         font = QtGui.QFont()
@@ -618,7 +653,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Pages_Widget.setCurrentIndex(3)
+        self.Pages_Widget.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -640,22 +675,25 @@ class Ui_MainWindow(object):
         item = self.tableWidget.horizontalHeaderItem(2)
         item.setText(_translate("MainWindow", "Superivisors Required"))
         self.label_11.setText(_translate("MainWindow", "Exams list"))
+        self.add_exam_btn.setText(_translate("MainWindow", "Add Exam"))
         self.label_12.setText(_translate("MainWindow", "Home"))
         self.label_14.setText(_translate("MainWindow", "Statistics"))
         item = self.complaints_table.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "Submission Date"))
+        item.setText(_translate("MainWindow", "id"))
         item = self.complaints_table.horizontalHeaderItem(1)
-        item.setText(_translate("MainWindow", "Submission Message"))
+        item.setText(_translate("MainWindow", "Submission Date"))
         item = self.complaints_table.horizontalHeaderItem(2)
-        item.setText(_translate("MainWindow", "Status"))
+        item.setText(_translate("MainWindow", "Submission Message"))
         item = self.complaints_table.horizontalHeaderItem(3)
-        item.setText(_translate("MainWindow", "Resolution Date"))
+        item.setText(_translate("MainWindow", "Status"))
         item = self.complaints_table.horizontalHeaderItem(4)
+        item.setText(_translate("MainWindow", "Resolution Date"))
+        item = self.complaints_table.horizontalHeaderItem(5)
         item.setText(_translate("MainWindow", "Resolution Message"))
+        self.label_16.setText(_translate("MainWindow", "Resolution message"))
         self.reject_btn.setText(_translate("MainWindow", "Reject"))
         self.accept_btn.setText(_translate("MainWindow", "Accept"))
-        self.submit_msg_btn.setText(_translate("MainWindow", "Submit"))
-        self.label_16.setText(_translate("MainWindow", "Resolution message"))
+        self.resolve_btn.setText(_translate("MainWindow", "Resolve"))
         self.label_15.setText(_translate("MainWindow", "Professors Complaints"))
 
 

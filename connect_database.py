@@ -100,6 +100,10 @@ class ConnectDatabase:
             # Close the database connection
             self.con.close()
 
+
+
+
+#####################COMPLAINTS###################################
     def display_pending_complaints(self):
         self.connect_db()
         sql = f"""SELECT * FROM reclamations WHERE status = 'pending';"""
@@ -113,5 +117,37 @@ class ConnectDatabase:
             return e
         finally:
             self.con.close()
+
+    def accept_complaint(self,reclamationID):
+        self.connect_db()
+        sql = f"""
+                            UPDATE reclamations
+                                SET status='accepted'
+                                WHERE id={reclamationID};
+                        """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+    def reject_complaint(self,reclamationID):
+        self.connect_db()
+        sql = f"""
+                            UPDATE reclamations
+                                SET status='rejected'
+                                WHERE id={reclamationID};
+                        """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
 
 

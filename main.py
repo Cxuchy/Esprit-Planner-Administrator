@@ -17,7 +17,7 @@ from ui_main import Ui_MainWindow
 from ui_functions import *
 from connect_database import ConnectDatabase
 
-
+from PyQt5.QtCore import QRect, QPropertyAnimation, QParallelAnimationGroup
 
 
 
@@ -78,10 +78,15 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.tableWidget.setColumnWidth(1,120)
         self.ui.tableWidget.setColumnWidth(2,150)
 
+
+
+
+
         # hiding the frame for resolution message
         self.ui.resolution_message_frame.hide()
         self.ui.accept_btn.clicked.connect(self.acceptReq)
         self.ui.reject_btn.clicked.connect(self.declineReq)
+        self.ui.resolve_btn.clicked.connect(self.openresolve)
 
 
         #closing widget
@@ -103,24 +108,70 @@ class MainWindow(QMainWindow):    ########################################### Ma
             else:
                 resDate = entry["resolutionDate"].strftime('%Y-%m-%d')
 
-            self.ui.complaints_table.setItem(row, 0, QTableWidgetItem(subDate))
-            self.ui.complaints_table.setItem(row, 1, QTableWidgetItem(str(entry["submitMessage"])))
-            self.ui.complaints_table.setItem(row, 2, QTableWidgetItem(str(entry["status"])))
-            self.ui.complaints_table.setItem(row, 3, QTableWidgetItem(resDate))
-            self.ui.complaints_table.setItem(row, 4, QTableWidgetItem(str(entry["resolutionMessage"])))
+            self.ui.complaints_table.setItem(row, 0, QTableWidgetItem(str(entry["id"])))
+            self.ui.complaints_table.setItem(row, 1, QTableWidgetItem(subDate))
+            self.ui.complaints_table.setItem(row, 2, QTableWidgetItem(str(entry["submitMessage"])))
+            self.ui.complaints_table.setItem(row, 3, QTableWidgetItem(str(entry["status"])))
+            self.ui.complaints_table.setItem(row, 4, QTableWidgetItem(resDate))
+            self.ui.complaints_table.setItem(row, 5, QTableWidgetItem(str(entry["resolutionMessage"])))
             row += 1
 
+        #Reading selected data from table
+        self.ui.complaints_table.itemSelectionChanged.connect(self.item_selection_changed)
 
 
+
+        self.ui.add_exam_btn.clicked.connect(self.openaddExam)
+        self.ui.close_add_exam.clicked.connect(self.closeaddExam)
+
+
+    def openaddExam(self):
+        self.ui.calendarWidget.setGeometry(20, 10, 441, 211)
+        self.ui.add_exam_btn.setGeometry(370, 240, 101, 29)
+        self.ui.label_11.setGeometry(170, 260, 131, 51)
+        self.ui.tableWidget.setGeometry(20, 310, 450, 111)
+        self.ui.widget_4.setGeometry(380, 50, 491, 451)
+    def closeaddExam(self):
+        self.ui.widget_4.setGeometry(10, 50, 861, 451)
 
     def closeResolution(self):
         self.ui.resolution_message_frame.hide()
 
     def acceptReq(self):
-        self.ui.resolution_message_frame.show()
+
+
+
+        self.ui.resolution_message_frame.hide()
+
     def declineReq(self):
+
+
+
+
+        self.ui.resolution_message_frame.hide()
+
+
+    def openresolve(self):
         self.ui.resolution_message_frame.show()
 
+
+    def item_selection_changed(self):
+        selected_items = self.ui.complaints_table.selectedItems()
+
+        if selected_items:
+            # Get the row of the first selected item (assuming single row selection)
+            selected_row = selected_items[0].row()
+
+            # Get data for all columns in the selected row
+            row_data = []
+            for column in range(self.ui.complaints_table.columnCount()):
+                item = self.ui.complaints_table.item(selected_row, column)
+                if item:
+                    row_data.append(item.text())
+                else:
+                    row_data.append("")
+            print("Row data:", row_data)
+            return row_data
 
 
 
@@ -152,6 +203,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         nbSupervisors = self.ui.supervisors_spinBox.text()
         db = ConnectDatabase()
         db.add_info(dateExam, examStart, nbSupervisors)
+        self.ui.widget_4.setGeometry(10, 50, 861, 451)
         QMessageBox.information(self, "Data inserted", "Exam inserted into Database")
 
 
@@ -264,8 +316,10 @@ class RegApp(QDialog):
             self.email_field.setText("")
             self.password_field.setText("")
 
+
     def show_login(self):
         widget.setCurrentIndex(0)
+
 
 
 
