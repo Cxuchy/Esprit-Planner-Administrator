@@ -1,4 +1,5 @@
 import mysql.connector
+from datetime import datetime
 
 class ConnectDatabase:
     def connect_db(self):
@@ -118,12 +119,12 @@ class ConnectDatabase:
         finally:
             self.con.close()
 
-    def accept_complaint(self,reclamationID):
+    def accept_complaint(self,reclamationID,resolutionMessage):
         self.connect_db()
         sql = f"""
                             UPDATE reclamations
-                                SET status='accepted'
-                                WHERE id={reclamationID};
+                            SET status='accepted', resolutionMessage='{resolutionMessage}', resolutionDate='{datetime.now().strftime("%Y-%m-%d")}'
+                            WHERE id={reclamationID};
                         """
         try:
             self.cursor.execute(sql)
@@ -133,12 +134,12 @@ class ConnectDatabase:
             return e
         finally:
             self.con.close()
-    def reject_complaint(self,reclamationID):
+    def reject_complaint(self,reclamationID,resolutionMessage):
         self.connect_db()
         sql = f"""
                             UPDATE reclamations
-                                SET status='rejected'
-                                WHERE id={reclamationID};
+                            SET status='rejected', resolutionMessage='{resolutionMessage}', resolutionDate='{datetime.now().strftime("%Y-%m-%d")}'
+                            WHERE id={reclamationID};
                         """
         try:
             self.cursor.execute(sql)

@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1001, 608)
+        MainWindow.resize(1194, 608)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
         MainWindow.setStyleSheet("background-color: white")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -135,6 +135,18 @@ class Ui_MainWindow(object):
         self.Btn_Menu_2.setIcon(icon1)
         self.Btn_Menu_2.setObjectName("Btn_Menu_2")
         self.verticalLayout_4.addWidget(self.Btn_Menu_2)
+        self.Home = QtWidgets.QLabel(self.frame_top_menus)
+        self.Home.setSizeIncrement(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Home.setFont(font)
+        self.Home.setStyleSheet("color: rgb(255, 255, 255);")
+        self.Home.setAlignment(QtCore.Qt.AlignCenter)
+        self.Home.setObjectName("Home")
+        self.verticalLayout_4.addWidget(self.Home)
         self.Btn_Menu_1 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Menu_1.setMinimumSize(QtCore.QSize(0, 80))
         font = QtGui.QFont()
@@ -160,6 +172,18 @@ class Ui_MainWindow(object):
         self.Btn_Menu_1.setIcon(icon2)
         self.Btn_Menu_1.setObjectName("Btn_Menu_1")
         self.verticalLayout_4.addWidget(self.Btn_Menu_1)
+        self.Home_4 = QtWidgets.QLabel(self.frame_top_menus)
+        self.Home_4.setSizeIncrement(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Home_4.setFont(font)
+        self.Home_4.setStyleSheet("color: rgb(255, 255, 255);")
+        self.Home_4.setAlignment(QtCore.Qt.AlignCenter)
+        self.Home_4.setObjectName("Home_4")
+        self.verticalLayout_4.addWidget(self.Home_4)
         self.Btn_Menu_3 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Menu_3.setMinimumSize(QtCore.QSize(0, 80))
         font = QtGui.QFont()
@@ -187,6 +211,18 @@ class Ui_MainWindow(object):
         self.Btn_Menu_3.setIcon(icon3)
         self.Btn_Menu_3.setObjectName("Btn_Menu_3")
         self.verticalLayout_4.addWidget(self.Btn_Menu_3)
+        self.Home_2 = QtWidgets.QLabel(self.frame_top_menus)
+        self.Home_2.setSizeIncrement(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Home_2.setFont(font)
+        self.Home_2.setStyleSheet("color: rgb(255, 255, 255);")
+        self.Home_2.setAlignment(QtCore.Qt.AlignCenter)
+        self.Home_2.setObjectName("Home_2")
+        self.verticalLayout_4.addWidget(self.Home_2)
         self.Btn_Menu_4 = QtWidgets.QPushButton(self.frame_top_menus)
         self.Btn_Menu_4.setMinimumSize(QtCore.QSize(0, 80))
         font = QtGui.QFont()
@@ -213,6 +249,18 @@ class Ui_MainWindow(object):
         self.Btn_Menu_4.setIcon(icon4)
         self.Btn_Menu_4.setObjectName("Btn_Menu_4")
         self.verticalLayout_4.addWidget(self.Btn_Menu_4)
+        self.Home_3 = QtWidgets.QLabel(self.frame_top_menus)
+        self.Home_3.setSizeIncrement(QtCore.QSize(20, 20))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.Home_3.setFont(font)
+        self.Home_3.setStyleSheet("color: rgb(255, 255, 255);")
+        self.Home_3.setAlignment(QtCore.Qt.AlignCenter)
+        self.Home_3.setObjectName("Home_3")
+        self.verticalLayout_4.addWidget(self.Home_3)
         self.verticalLayout_3.addWidget(self.frame_top_menus, 0, QtCore.Qt.AlignTop)
         self.Btn_Logout = QtWidgets.QPushButton(self.frame_left_menu)
         self.Btn_Logout.setMinimumSize(QtCore.QSize(0, 80))
@@ -390,45 +438,95 @@ class Ui_MainWindow(object):
         self.close_add_exam.setIcon(icon6)
         self.close_add_exam.setObjectName("close_add_exam")
         self.widget_4 = QtWidgets.QWidget(self.page_2)
-        self.widget_4.setGeometry(QtCore.QRect(10, 50, 861, 451))
+        self.widget_4.setGeometry(QtCore.QRect(20, 50, 861, 451))
         self.widget_4.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_4.setObjectName("widget_4")
         self.calendarWidget = QtWidgets.QCalendarWidget(self.widget_4)
-        self.calendarWidget.setGeometry(QtCore.QRect(20, 10, 441, 211))
+        self.calendarWidget.setGeometry(QtCore.QRect(10, 80, 371, 251))
         self.calendarWidget.setStyleSheet("color:black;\n"
 "border-radius:20px;")
         self.calendarWidget.setObjectName("calendarWidget")
         self.tableWidget = QtWidgets.QTableWidget(self.widget_4)
-        self.tableWidget.setGeometry(QtCore.QRect(20, 310, 450, 111))
-        self.tableWidget.setStyleSheet("QTableView {\n"
-"    color: black;\n"
-"    gridline-color: black;\n"
-"    border-color: rgb(242, 128, 133);\n"
-"    font: 10px;\n"
+        self.tableWidget.setGeometry(QtCore.QRect(409, 100, 431, 331))
+        self.tableWidget.setStyleSheet("/* General QTableWidget styling */\n"
+"QTableWidget {\n"
+"    border: 1px solid #eb2f30;\n"
+"    border-radius: 5px;\n"
+"    gridline-color: #eb2f30;\n"
+"    font-size: 14px;\n"
+"    color: #333333;\n"
+"    background-color: #f9f9f9;\n"
 "}\n"
+"\n"
+"/* Header styling */\n"
 "QHeaderView::section {\n"
-"    background-color: rgb(71, 153, 176);\n"
+"    background-color: #eb2f30;\n"
 "    color: white;\n"
-"    height: 35px;\n"
-"    font: 14px;\n"
+"    padding: 5px;\n"
+"    border: 1px solid #eb2f30;\n"
+"    font-weight: bold;\n"
 "}\n"
-"QTableView::item:focus{\n"
-"    border: 2px solid rgb(242, 128, 133);\n"
-"    background-color: rgb(255, 254, 229);\n"
+"\n"
+"/* Alternate row colors */\n"
+"QTableWidget::item {\n"
+"    padding: 5px;\n"
+"    border: none;\n"
 "}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #eb2f30;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QTableWidget::item:alternate {\n"
+"    background-color: #fdd2d2;\n"
+"}\n"
+"\n"
+"/* Grid lines */\n"
+"QTableWidget::item {\n"
+"    border: 1px solid #eb2f30;\n"
+"}\n"
+"\n"
+"/* Vertical and Horizontal Scrollbar */\n"
 "QScrollBar:vertical {\n"
-"    background: rgb(188, 224, 235);\n"
+"    border: none;\n"
+"    background: #e0e0e0;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
 "}\n"
-" QScrollBar::handle:vertical {\n"
-"    background: rgb(71, 153, 176);\n"
-" }\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #eb2f30;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
 "QScrollBar:horizontal {\n"
-"    background: rgb(188, 224, 235);\n"
+"    border: none;\n"
+"    background: #e0e0e0;\n"
+"    height: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
 "}\n"
-" QScrollBar::handle:horizontal {\n"
-"    background: rgb(71, 153, 176);\n"
-" }")
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background: #eb2f30;\n"
+"    min-width: 20px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"/* Corner button */\n"
+"QTableCornerButton::section {\n"
+"    background-color: #eb2f30;\n"
+"    border: 1px solid #eb2f30;\n"
+"}\n"
+"")
         self.tableWidget.setObjectName("tableWidget")
         self.tableWidget.setColumnCount(3)
         self.tableWidget.setRowCount(0)
@@ -439,7 +537,7 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(2, item)
         self.label_11 = QtWidgets.QLabel(self.widget_4)
-        self.label_11.setGeometry(QtCore.QRect(170, 260, 131, 51))
+        self.label_11.setGeometry(QtCore.QRect(490, 30, 261, 51))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(19)
@@ -448,7 +546,7 @@ class Ui_MainWindow(object):
         self.label_11.setFont(font)
         self.label_11.setObjectName("label_11")
         self.add_exam_btn = QtWidgets.QPushButton(self.widget_4)
-        self.add_exam_btn.setGeometry(QtCore.QRect(370, 240, 101, 29))
+        self.add_exam_btn.setGeometry(QtCore.QRect(280, 340, 101, 29))
         font = QtGui.QFont()
         font.setFamily("Sitka Text")
         font.setPointSize(10)
@@ -499,6 +597,60 @@ class Ui_MainWindow(object):
         self.widget.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget.setObjectName("widget")
+        self.label_2 = QtWidgets.QLabel(self.widget)
+        self.label_2.setGeometry(QtCore.QRect(40, 30, 521, 71))
+        font = QtGui.QFont()
+        font.setFamily("Sitka Text")
+        font.setPointSize(13)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_2.setFont(font)
+        self.label_2.setObjectName("label_2")
+        self.professors = QtWidgets.QComboBox(self.widget)
+        self.professors.setGeometry(QtCore.QRect(610, 60, 69, 22))
+        self.professors.setStyleSheet("/* General QComboBox styling */\n"
+"QComboBox {\n"
+"    border: 1px solid #eb2f30;\n"
+"    border-radius: 5px;\n"
+"    padding: 5px;\n"
+"    background-color: #ffffff;\n"
+"    color: #333333;\n"
+"}\n"
+"\n"
+"/* QComboBox when the drop-down is open */\n"
+"QComboBox::drop-down {\n"
+"    subcontrol-origin: padding;\n"
+"    subcontrol-position: top right;\n"
+"    width: 15px;\n"
+"    border-left-width: 1px;\n"
+"    border-left-color: #eb2f30;\n"
+"    border-left-style: solid;\n"
+"    border-top-right-radius: 3px;\n"
+"    border-bottom-right-radius: 3px;\n"
+"    background-color: #eb2f30;\n"
+"}\n"
+"\n"
+"QComboBox::down-arrow {\n"
+"    image: url(down_arrow.png); /* Replace with your own arrow image */\n"
+"    width: 10px;\n"
+"    height: 10px;\n"
+"}\n"
+"\n"
+"/* QComboBox Popup styling */\n"
+"QComboBox QAbstractItemView {\n"
+"    border: 1px solid #eb2f30;\n"
+"    selection-background-color: #eb2f30;\n"
+"    selection-color: #ffffff;\n"
+"}\n"
+"\n"
+"/* Optional: Customize the QComboBox when it\'s disabled */\n"
+"QComboBox:disabled {\n"
+"    background-color: #d3d3d3;\n"
+"    color: #a0a0a0;\n"
+"    border: 1px solid #d3d3d3;\n"
+"}\n"
+"")
+        self.professors.setObjectName("professors")
         self.label_14 = QtWidgets.QLabel(self.page_3)
         self.label_14.setGeometry(QtCore.QRect(360, 0, 141, 41))
         font = QtGui.QFont()
@@ -518,8 +670,85 @@ class Ui_MainWindow(object):
 "border-radius:20px;")
         self.widget_6.setObjectName("widget_6")
         self.complaints_table = QtWidgets.QTableWidget(self.widget_6)
-        self.complaints_table.setGeometry(QtCore.QRect(60, 30, 781, 321))
-        self.complaints_table.setStyleSheet("")
+        self.complaints_table.setGeometry(QtCore.QRect(50, 30, 771, 351))
+        self.complaints_table.setStyleSheet("/* General QTableWidget styling */\n"
+"QTableWidget {\n"
+"    border: 1px solid #eb2f30;\n"
+"    border-radius: 5px;\n"
+"    gridline-color: #eb2f30;\n"
+"    font-size: 14px;\n"
+"    color: #333333;\n"
+"    background-color: #f9f9f9;\n"
+"}\n"
+"\n"
+"/* Header styling */\n"
+"QHeaderView::section {\n"
+"    background-color: #eb2f30;\n"
+"    color: white;\n"
+"    padding: 5px;\n"
+"    border: 1px solid #eb2f30;\n"
+"    font-weight: bold;\n"
+"}\n"
+"\n"
+"/* Alternate row colors */\n"
+"QTableWidget::item {\n"
+"    padding: 5px;\n"
+"    border: none;\n"
+"}\n"
+"\n"
+"QTableWidget::item:selected {\n"
+"    background-color: #eb2f30;\n"
+"    color: white;\n"
+"}\n"
+"\n"
+"QTableWidget::item:alternate {\n"
+"    background-color: #fdd2d2;\n"
+"}\n"
+"\n"
+"/* Grid lines */\n"
+"QTableWidget::item {\n"
+"    border: 1px solid #eb2f30;\n"
+"}\n"
+"\n"
+"/* Vertical and Horizontal Scrollbar */\n"
+"QScrollBar:vertical {\n"
+"    border: none;\n"
+"    background: #e0e0e0;\n"
+"    width: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:vertical {\n"
+"    background: #eb2f30;\n"
+"    min-height: 20px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"QScrollBar:horizontal {\n"
+"    border: none;\n"
+"    background: #e0e0e0;\n"
+"    height: 10px;\n"
+"    margin: 0px 0px 0px 0px;\n"
+"}\n"
+"\n"
+"QScrollBar::handle:horizontal {\n"
+"    background: #eb2f30;\n"
+"    min-width: 20px;\n"
+"}\n"
+"\n"
+"QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {\n"
+"    background: none;\n"
+"}\n"
+"\n"
+"/* Corner button */\n"
+"QTableCornerButton::section {\n"
+"    background-color: #eb2f30;\n"
+"    border: 1px solid #eb2f30;\n"
+"}\n"
+"")
         self.complaints_table.setLineWidth(1)
         self.complaints_table.setDragEnabled(False)
         self.complaints_table.setColumnCount(6)
@@ -653,13 +882,17 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Pages_Widget.setCurrentIndex(0)
+        self.Pages_Widget.setCurrentIndex(3)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
         self.label_4.setText(_translate("MainWindow", "EspritPlanner"))
+        self.Home.setText(_translate("MainWindow", "Home"))
+        self.Home_4.setText(_translate("MainWindow", "Add Planning"))
+        self.Home_2.setText(_translate("MainWindow", "Statistics"))
+        self.Home_3.setText(_translate("MainWindow", "Complaints"))
         self.label.setText(_translate("MainWindow", "Exam Calendar Manager"))
         self.label_6.setText(_translate("MainWindow", "Exam Date Manager"))
         self.label_7.setText(_translate("MainWindow", "Exam Date "))
@@ -677,9 +910,10 @@ class Ui_MainWindow(object):
         self.label_11.setText(_translate("MainWindow", "Exams list"))
         self.add_exam_btn.setText(_translate("MainWindow", "Add Exam"))
         self.label_12.setText(_translate("MainWindow", "Home"))
+        self.label_2.setText(_translate("MainWindow", "Please Select The Desired professor to see it\'s full planning"))
         self.label_14.setText(_translate("MainWindow", "Statistics"))
         item = self.complaints_table.horizontalHeaderItem(0)
-        item.setText(_translate("MainWindow", "id"))
+        item.setText(_translate("MainWindow", "Identifier"))
         item = self.complaints_table.horizontalHeaderItem(1)
         item.setText(_translate("MainWindow", "Submission Date"))
         item = self.complaints_table.horizontalHeaderItem(2)

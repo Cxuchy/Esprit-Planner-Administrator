@@ -316,6 +316,33 @@ background-color: #de5758;
               </widget>
              </item>
              <item>
+              <widget class="QLabel" name="Home">
+               <property name="sizeIncrement">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 255);</string>
+               </property>
+               <property name="text">
+                <string>Home</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="Btn_Menu_1">
                <property name="minimumSize">
                 <size>
@@ -351,6 +378,33 @@ background-color: #de5758;
                 <iconset>
                  <normalon>design/icons/plus.png</normalon>
                 </iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Home_4">
+               <property name="sizeIncrement">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 255);</string>
+               </property>
+               <property name="text">
+                <string>Add Planning</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -400,6 +454,33 @@ background-color:#de5758;
               </widget>
              </item>
              <item>
+              <widget class="QLabel" name="Home_2">
+               <property name="sizeIncrement">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 255);</string>
+               </property>
+               <property name="text">
+                <string>Statistics</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
               <widget class="QPushButton" name="Btn_Menu_4">
                <property name="minimumSize">
                 <size>
@@ -438,6 +519,33 @@ background-color: #de5758;
                 <iconset>
                  <normalon>design/icons/user-interface.png</normalon>
                 </iconset>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="Home_3">
+               <property name="sizeIncrement">
+                <size>
+                 <width>20</width>
+                 <height>20</height>
+                </size>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">color: rgb(255, 255, 255);</string>
+               </property>
+               <property name="text">
+                <string>Complaints</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
              </item>
@@ -510,7 +618,7 @@ background-color: #de5758;
 border-radius:20px;</string>
             </property>
             <property name="currentIndex">
-             <number>0</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label">
@@ -791,7 +899,7 @@ border:2px solid black;</string>
              <widget class="QWidget" name="widget_4" native="true">
               <property name="geometry">
                <rect>
-                <x>10</x>
+                <x>20</x>
                 <y>50</y>
                 <width>861</width>
                 <height>451</height>
@@ -804,10 +912,10 @@ border-radius:20px;</string>
               <widget class="QCalendarWidget" name="calendarWidget">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>10</y>
-                 <width>441</width>
-                 <height>211</height>
+                 <x>10</x>
+                 <y>80</y>
+                 <width>371</width>
+                 <height>251</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -818,41 +926,91 @@ border-radius:20px;</string>
               <widget class="QTableWidget" name="tableWidget">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>310</y>
-                 <width>450</width>
-                 <height>111</height>
+                 <x>409</x>
+                 <y>100</y>
+                 <width>431</width>
+                 <height>331</height>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true">QTableView {
-    color: black;
-    gridline-color: black;
-    border-color: rgb(242, 128, 133);
-    font: 10px;
+                <string notr="true">/* General QTableWidget styling */
+QTableWidget {
+    border: 1px solid #eb2f30;
+    border-radius: 5px;
+    gridline-color: #eb2f30;
+    font-size: 14px;
+    color: #333333;
+    background-color: #f9f9f9;
 }
+
+/* Header styling */
 QHeaderView::section {
-    background-color: rgb(71, 153, 176);
+    background-color: #eb2f30;
     color: white;
-    height: 35px;
-    font: 14px;
+    padding: 5px;
+    border: 1px solid #eb2f30;
+    font-weight: bold;
 }
-QTableView::item:focus{
-    border: 2px solid rgb(242, 128, 133);
-    background-color: rgb(255, 254, 229);
+
+/* Alternate row colors */
+QTableWidget::item {
+    padding: 5px;
+    border: none;
 }
+
+QTableWidget::item:selected {
+    background-color: #eb2f30;
+    color: white;
+}
+
+QTableWidget::item:alternate {
+    background-color: #fdd2d2;
+}
+
+/* Grid lines */
+QTableWidget::item {
+    border: 1px solid #eb2f30;
+}
+
+/* Vertical and Horizontal Scrollbar */
 QScrollBar:vertical {
-    background: rgb(188, 224, 235);
+    border: none;
+    background: #e0e0e0;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
 }
- QScrollBar::handle:vertical {
-    background: rgb(71, 153, 176);
- }
+
+QScrollBar::handle:vertical {
+    background: #eb2f30;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+
 QScrollBar:horizontal {
-    background: rgb(188, 224, 235);
+    border: none;
+    background: #e0e0e0;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
 }
- QScrollBar::handle:horizontal {
-    background: rgb(71, 153, 176);
- }</string>
+
+QScrollBar::handle:horizontal {
+    background: #eb2f30;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+/* Corner button */
+QTableCornerButton::section {
+    background-color: #eb2f30;
+    border: 1px solid #eb2f30;
+}
+</string>
                </property>
                <column>
                 <property name="text">
@@ -873,9 +1031,9 @@ QScrollBar:horizontal {
               <widget class="QLabel" name="label_11">
                <property name="geometry">
                 <rect>
-                 <x>170</x>
-                 <y>260</y>
-                 <width>131</width>
+                 <x>490</x>
+                 <y>30</y>
+                 <width>261</width>
                  <height>51</height>
                 </rect>
                </property>
@@ -894,8 +1052,8 @@ QScrollBar:horizontal {
               <widget class="QPushButton" name="add_exam_btn">
                <property name="geometry">
                 <rect>
-                 <x>370</x>
-                 <y>240</y>
+                 <x>280</x>
+                 <y>340</y>
                  <width>101</width>
                  <height>29</height>
                 </rect>
@@ -991,6 +1149,81 @@ border-radius:20px;</string>
                <string notr="true">background-color:white;
 border-radius:20px;</string>
               </property>
+              <widget class="QLabel" name="label_2">
+               <property name="geometry">
+                <rect>
+                 <x>40</x>
+                 <y>30</y>
+                 <width>521</width>
+                 <height>71</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>13</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Please Select The Desired professor to see it's full planning</string>
+               </property>
+              </widget>
+              <widget class="QComboBox" name="professors">
+               <property name="geometry">
+                <rect>
+                 <x>610</x>
+                 <y>60</y>
+                 <width>69</width>
+                 <height>22</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">/* General QComboBox styling */
+QComboBox {
+    border: 1px solid #eb2f30;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+/* QComboBox when the drop-down is open */
+QComboBox::drop-down {
+    subcontrol-origin: padding;
+    subcontrol-position: top right;
+    width: 15px;
+    border-left-width: 1px;
+    border-left-color: #eb2f30;
+    border-left-style: solid;
+    border-top-right-radius: 3px;
+    border-bottom-right-radius: 3px;
+    background-color: #eb2f30;
+}
+
+QComboBox::down-arrow {
+    image: url(down_arrow.png); /* Replace with your own arrow image */
+    width: 10px;
+    height: 10px;
+}
+
+/* QComboBox Popup styling */
+QComboBox QAbstractItemView {
+    border: 1px solid #eb2f30;
+    selection-background-color: #eb2f30;
+    selection-color: #ffffff;
+}
+
+/* Optional: Customize the QComboBox when it's disabled */
+QComboBox:disabled {
+    background-color: #d3d3d3;
+    color: #a0a0a0;
+    border: 1px solid #d3d3d3;
+}
+</string>
+               </property>
+              </widget>
              </widget>
              <widget class="QLabel" name="label_14">
               <property name="geometry">
@@ -1034,14 +1267,91 @@ border-radius:20px;</string>
               <widget class="QTableWidget" name="complaints_table">
                <property name="geometry">
                 <rect>
-                 <x>60</x>
+                 <x>50</x>
                  <y>30</y>
-                 <width>781</width>
-                 <height>321</height>
+                 <width>771</width>
+                 <height>351</height>
                 </rect>
                </property>
                <property name="styleSheet">
-                <string notr="true"/>
+                <string notr="true">/* General QTableWidget styling */
+QTableWidget {
+    border: 1px solid #eb2f30;
+    border-radius: 5px;
+    gridline-color: #eb2f30;
+    font-size: 14px;
+    color: #333333;
+    background-color: #f9f9f9;
+}
+
+/* Header styling */
+QHeaderView::section {
+    background-color: #eb2f30;
+    color: white;
+    padding: 5px;
+    border: 1px solid #eb2f30;
+    font-weight: bold;
+}
+
+/* Alternate row colors */
+QTableWidget::item {
+    padding: 5px;
+    border: none;
+}
+
+QTableWidget::item:selected {
+    background-color: #eb2f30;
+    color: white;
+}
+
+QTableWidget::item:alternate {
+    background-color: #fdd2d2;
+}
+
+/* Grid lines */
+QTableWidget::item {
+    border: 1px solid #eb2f30;
+}
+
+/* Vertical and Horizontal Scrollbar */
+QScrollBar:vertical {
+    border: none;
+    background: #e0e0e0;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #eb2f30;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #e0e0e0;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #eb2f30;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+/* Corner button */
+QTableCornerButton::section {
+    background-color: #eb2f30;
+    border: 1px solid #eb2f30;
+}
+</string>
                </property>
                <property name="lineWidth">
                 <number>1</number>
@@ -1054,7 +1364,7 @@ border-radius:20px;</string>
                </property>
                <column>
                 <property name="text">
-                 <string>id</string>
+                 <string>Identifier</string>
                 </property>
                </column>
                <column>

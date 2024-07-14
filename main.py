@@ -69,17 +69,29 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.Btn_Menu_4.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_4))
 
 
+        #log out still not working
+        self.ui.Btn_Logout.clicked.connect(lambda: self.ui.widget.setCurrentIndex(1))
+
+
+
         #Calendar selection
         self.ui.calendarWidget.selectionChanged.connect(self.calendarDateChanged)
 
         self.ui.submit_btn.clicked.connect(self.addExamPassage)
 
-        self.ui.tableWidget.setColumnWidth(0,120)
-        self.ui.tableWidget.setColumnWidth(1,120)
-        self.ui.tableWidget.setColumnWidth(2,150)
+        self.ui.tableWidget.setColumnWidth(0,130)
+        self.ui.tableWidget.setColumnWidth(1,130)
+        self.ui.tableWidget.setColumnWidth(2,170)
 
+        self.ui.complaints_table.setColumnWidth(0, 90)
+        self.ui.complaints_table.setColumnWidth(1, 120)
+        self.ui.complaints_table.setColumnWidth(2, 180)
+        self.ui.complaints_table.setColumnWidth(3, 90)
+        self.ui.complaints_table.setColumnWidth(4, 120)
+        self.ui.complaints_table.setColumnWidth(5, 180)
 
-
+        self.ui.tableWidget.verticalHeader().setVisible(False)
+        self.ui.complaints_table.verticalHeader().setVisible(False)
 
 
         # hiding the frame for resolution message
@@ -94,11 +106,14 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
         #filling the complaints table
         complaints = db.display_pending_complaints()
-        print(complaints)
+
         self.ui.complaints_table.setRowCount(len(complaints))
+        self.ui.tableWidget.setHorizontalHeaderLabels(["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date", "Resolution Message"])
         row = 0
         for entry in complaints:
-
+            self.ui.tableWidget.setHorizontalHeaderLabels(
+                ["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date",
+                 "Resolution Message"])
             if entry["submissionDate"] is None:
                 subDate = "NA"
             else :
@@ -132,23 +147,27 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.tableWidget.setGeometry(20, 310, 450, 111)
         self.ui.widget_4.setGeometry(380, 50, 491, 451)
     def closeaddExam(self):
+        self.ui.calendarWidget.setGeometry(10, 80, 371, 251)
+        self.ui.add_exam_btn.setGeometry(280, 340, 101, 29)
+        self.ui.label_11.setGeometry(490, 30, 261, 51)
+        self.ui.tableWidget.setGeometry(399, 100, 441, 331)
+
         self.ui.widget_4.setGeometry(10, 50, 861, 451)
 
     def closeResolution(self):
         self.ui.resolution_message_frame.hide()
 
     def acceptReq(self):
-
-
-
+        db = ConnectDatabase()
+        db.accept_complaint(self.item_selection_changed()[0],self.ui.resolution_field.toPlainText())
         self.ui.resolution_message_frame.hide()
+        QMessageBox.information(self, "Resolution Done", "Complaint accepted")
 
     def declineReq(self):
-
-
-
-
+        db = ConnectDatabase()
+        db.reject_complaint(self.item_selection_changed()[0], self.ui.resolution_field.toPlainText())
         self.ui.resolution_message_frame.hide()
+        QMessageBox.information(self, "Resolution Done", "Complaint rejected")
 
 
     def openresolve(self):
@@ -189,8 +208,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
         # Extracting the values and converting the date to a string
 
         self.ui.tableWidget.setRowCount(len(result))
+        self.ui.tableWidget.setHorizontalHeaderLabels(["Exam Date", "Passage Hour", "Supervisors Required"])
         row = 0
         for entry in result:
+            self.ui.tableWidget.setHorizontalHeaderLabels(["Exam Date", "Passage Hour", "Supervisors Required"])
             self.ui.tableWidget.setItem(row,0,QTableWidgetItem(entry["datepassage"].strftime('%Y-%m-%d')))
             self.ui.tableWidget.setItem(row,1,QTableWidgetItem(str(entry["heurepassage"])))
             self.ui.tableWidget.setItem(row,2,QTableWidgetItem(str(entry["nbprof_required"])))
