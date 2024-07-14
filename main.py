@@ -55,16 +55,12 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
         ## PAGES
         ########################################################################
-
         # PAGE 1
         self.ui.Btn_Menu_1.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_2))
-
         # PAGE 2
         self.ui.Btn_Menu_2.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_1))
-
         # PAGE 3
         self.ui.Btn_Menu_3.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_3))
-
 
         self.ui.Btn_Menu_4.clicked.connect(lambda: self.ui.Pages_Widget.setCurrentWidget(self.ui.page_4))
 
@@ -72,13 +68,9 @@ class MainWindow(QMainWindow):    ########################################### Ma
         #log out still not working
         self.ui.Btn_Logout.clicked.connect(lambda: self.ui.widget.setCurrentIndex(1))
 
-
-
         #Calendar selection
         self.ui.calendarWidget.selectionChanged.connect(self.calendarDateChanged)
-
         self.ui.submit_btn.clicked.connect(self.addExamPassage)
-
         self.ui.tableWidget.setColumnWidth(0,130)
         self.ui.tableWidget.setColumnWidth(1,130)
         self.ui.tableWidget.setColumnWidth(2,170)
@@ -90,9 +82,9 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.complaints_table.setColumnWidth(4, 120)
         self.ui.complaints_table.setColumnWidth(5, 180)
 
+
         self.ui.tableWidget.verticalHeader().setVisible(False)
         self.ui.complaints_table.verticalHeader().setVisible(False)
-
 
         # hiding the frame for resolution message
         self.ui.resolution_message_frame.hide()
@@ -100,9 +92,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.reject_btn.clicked.connect(self.declineReq)
         self.ui.resolve_btn.clicked.connect(self.openresolve)
 
-
         #closing widget
         self.ui.close_resolution_frame.clicked.connect(self.closeResolution)
+
+        self.ui.statistics_widget.setGeometry(19, 50, 851, 451)
 
         #filling the complaints table
         complaints = db.display_pending_complaints()
@@ -134,10 +127,95 @@ class MainWindow(QMainWindow):    ########################################### Ma
         #Reading selected data from table
         self.ui.complaints_table.itemSelectionChanged.connect(self.item_selection_changed)
 
-
-
         self.ui.add_exam_btn.clicked.connect(self.openaddExam)
         self.ui.close_add_exam.clicked.connect(self.closeaddExam)
+
+
+        #Professors combobox
+        professors_names = db.display_professors()
+        for entry in professors_names:
+            self.ui.professors_combobox.addItem(str(entry["nom"]))
+
+        self.ui.professors_combobox.currentIndexChanged.connect(self.on_professors_combobox_changed)
+
+        self.ui.close_stats_details.clicked.connect(self.closeprofstatistics)
+
+        self.ui.label_3.hide()
+        self.ui.label_17.hide()
+        self.ui.l1.hide()
+        self.ui.label_18.hide()
+        self.ui.l2.hide()
+        self.ui.label_19.hide()
+        self.ui.l3.hide()
+        self.ui.label_20.hide()
+        self.ui.l4.hide()
+
+
+
+
+    def closeprofstatistics(self):
+        self.ui.statistics_widget.setGeometry(19, 50, 851, 451)
+
+        self.ui.label_2.show()
+        self.ui.professors_combobox.show()
+
+        self.ui.label_3.hide()
+        self.ui.label_17.hide()
+        self.ui.l1.hide()
+        self.ui.label_18.hide()
+        self.ui.l2.hide()
+        self.ui.label_19.hide()
+        self.ui.l3.hide()
+        self.ui.label_20.hide()
+        self.ui.l4.hide()
+
+    def on_professors_combobox_changed(self):
+
+        # getting the actual value of the combobox
+        professor_name = self.ui.professors_combobox.currentText()
+        db = ConnectDatabase()
+        professor = db.get_specific_professor(professor_name)
+
+        self.ui.l1.setText(str(professor[0]["identifier"]))
+        self.ui.l2.setText(str(professor[0]["nom"]))
+        self.ui.l3.setText(str(professor[0]["email"]))
+        self.ui.l4.setText(str(professor[0]["phonenumber"]))
+
+        if(professor[0]["hasplanning"] == 0):
+            self.ui.notchosen_widget.show()
+        else:
+            self.ui.notchosen_widget.hide()
+
+
+
+        self.ui.label_2.hide()
+        self.ui.professors_combobox.hide()
+
+        self.ui.label_3.show()
+        self.ui.label_17.show()
+        self.ui.l1.show()
+        self.ui.label_18.show()
+        self.ui.l2.show()
+        self.ui.label_19.show()
+        self.ui.l3.show()
+        self.ui.label_20.show()
+        self.ui.l4.show()
+
+
+        print(professor_name)
+        #looking for the id of the professor with that name and getting its planning
+
+        # stats part --> piechart for eg
+
+        #
+        self.ui.label_13.setText('Planning for '+professor_name)
+        self.ui.statistics_widget.setGeometry(659, 50, 211, 451)
+        return True
+
+
+
+
+
 
 
     def openaddExam(self):

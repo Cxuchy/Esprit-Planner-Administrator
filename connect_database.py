@@ -152,3 +152,60 @@ class ConnectDatabase:
 
 
 
+    def display_professors(self):
+        self.connect_db()
+        sql = f"""SELECT * FROM users WHERE role = 'Professor';"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def get_specific_professor(self,professor_name):
+        self.connect_db()
+        sql = f"""SELECT * FROM users WHERE role = 'Professor' and nom = '{professor_name}';"""
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+    def get_prof_id(self,prof_name):
+        self.connect_db()
+        sql = f"""SELECT id FROM users WHERE nom = '{prof_name}';"""
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+    def get_final_planning(self,professor_id):
+        self.connect_db()
+        sql = f"""SELECT * FROM requests r join passageexams p on r.passageexamid = p.id  WHERE status = 'accepted' and userid = '{professor_id}';"""
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+

@@ -618,7 +618,7 @@ background-color: #de5758;
 border-radius:20px;</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label">
@@ -1136,12 +1136,12 @@ border-radius:20px;</string>
              </widget>
             </widget>
             <widget class="QWidget" name="page_3">
-             <widget class="QWidget" name="widget" native="true">
+             <widget class="QWidget" name="statistics_widget" native="true">
               <property name="geometry">
                <rect>
-                <x>10</x>
+                <x>649</x>
                 <y>50</y>
-                <width>860</width>
+                <width>221</width>
                 <height>451</height>
                </rect>
               </property>
@@ -1152,10 +1152,10 @@ border-radius:20px;</string>
               <widget class="QLabel" name="label_2">
                <property name="geometry">
                 <rect>
-                 <x>40</x>
-                 <y>30</y>
+                 <x>150</x>
+                 <y>130</y>
                  <width>521</width>
-                 <height>71</height>
+                 <height>61</height>
                 </rect>
                </property>
                <property name="font">
@@ -1170,13 +1170,13 @@ border-radius:20px;</string>
                 <string>Please Select The Desired professor to see it's full planning</string>
                </property>
               </widget>
-              <widget class="QComboBox" name="professors">
+              <widget class="QComboBox" name="professors_combobox">
                <property name="geometry">
                 <rect>
-                 <x>610</x>
-                 <y>60</y>
-                 <width>69</width>
-                 <height>22</height>
+                 <x>320</x>
+                 <y>210</y>
+                 <width>221</width>
+                 <height>31</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -1224,6 +1224,195 @@ QComboBox:disabled {
 </string>
                </property>
               </widget>
+              <widget class="QLabel" name="label_3">
+               <property name="geometry">
+                <rect>
+                 <x>50</x>
+                 <y>30</y>
+                 <width>521</width>
+                 <height>61</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>13</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>User Details</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_17">
+               <property name="geometry">
+                <rect>
+                 <x>5</x>
+                 <y>140</y>
+                 <width>71</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Identifier</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_18">
+               <property name="geometry">
+                <rect>
+                 <x>5</x>
+                 <y>180</y>
+                 <width>81</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Full Name</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_19">
+               <property name="geometry">
+                <rect>
+                 <x>5</x>
+                 <y>220</y>
+                 <width>81</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Email</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="label_20">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>290</y>
+                 <width>121</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string>Phone Number</string>
+               </property>
+              </widget>
+              <widget class="QLabel" name="l1">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>140</y>
+                 <width>121</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QLabel" name="l2">
+               <property name="geometry">
+                <rect>
+                 <x>80</x>
+                 <y>180</y>
+                 <width>121</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QLabel" name="l3">
+               <property name="geometry">
+                <rect>
+                 <x>60</x>
+                 <y>220</y>
+                 <width>141</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QLabel" name="l4">
+               <property name="geometry">
+                <rect>
+                 <x>50</x>
+                 <y>320</y>
+                 <width>131</width>
+                 <height>41</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>10</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
              </widget>
              <widget class="QLabel" name="label_14">
               <property name="geometry">
@@ -1249,6 +1438,133 @@ QComboBox:disabled {
                <string>Statistics</string>
               </property>
              </widget>
+             <widget class="QWidget" name="prof_details_widget" native="true">
+              <property name="geometry">
+               <rect>
+                <x>20</x>
+                <y>50</y>
+                <width>621</width>
+                <height>451</height>
+               </rect>
+              </property>
+              <property name="styleSheet">
+               <string notr="true">background-color:white;
+border-radius:20px;</string>
+              </property>
+              <widget class="QLabel" name="label_13">
+               <property name="geometry">
+                <rect>
+                 <x>60</x>
+                 <y>10</y>
+                 <width>511</width>
+                 <height>51</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Sitka Text</family>
+                 <pointsize>19</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="close_stats_details">
+               <property name="geometry">
+                <rect>
+                 <x>580</x>
+                 <y>20</y>
+                 <width>25</width>
+                 <height>23</height>
+                </rect>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius : 10px solid;
+border:2px solid black;</string>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normalon>design/icons/close.png</normalon>
+                </iconset>
+               </property>
+              </widget>
+              <widget class="QWidget" name="notchosen_widget" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>39</x>
+                 <y>100</y>
+                 <width>541</width>
+                 <height>231</height>
+                </rect>
+               </property>
+               <widget class="QLabel" name="label_21">
+                <property name="geometry">
+                 <rect>
+                  <x>40</x>
+                  <y>70</y>
+                  <width>481</width>
+                  <height>61</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Sitka Text</family>
+                  <pointsize>17</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="text">
+                 <string>This User has not chosen a Planning yet</string>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="notify">
+                <property name="geometry">
+                 <rect>
+                  <x>290</x>
+                  <y>170</y>
+                  <width>241</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Sitka Text</family>
+                  <pointsize>11</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QPushButton#notify
+{
+background-color :#eb2f30;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#notify:pressed
+{
+background-color :#de5758;  
+}</string>
+                </property>
+                <property name="text">
+                 <string>Notify Professor via an Email</string>
+                </property>
+               </widget>
+              </widget>
+             </widget>
+             <zorder>prof_details_widget</zorder>
+             <zorder>label_14</zorder>
+             <zorder>statistics_widget</zorder>
             </widget>
             <widget class="QWidget" name="page_4">
              <widget class="QWidget" name="widget_6" native="true">
