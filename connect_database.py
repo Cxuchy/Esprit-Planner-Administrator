@@ -1,5 +1,10 @@
 import mysql.connector
 from datetime import datetime
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
+
+
 
 class ConnectDatabase:
     def connect_db(self):
@@ -193,6 +198,18 @@ class ConnectDatabase:
         finally:
             self.con.close()
 
+    def get_prof_email_from_name(self,prof_name):
+        self.connect_db()
+        sql = f"""SELECT * FROM users WHERE nom = '{prof_name}';"""
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
 
     def get_final_planning(self,professor_id):
         self.connect_db()

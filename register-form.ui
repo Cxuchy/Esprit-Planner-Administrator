@@ -37,7 +37,7 @@ border-radius:20px;</string>
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -70,7 +70,7 @@ border:2px solid #FBAD25;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -106,7 +106,7 @@ border:2px solid #FBAD25;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <italic>false</italic>
@@ -142,7 +142,7 @@ background-color :#de5758;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -178,6 +178,7 @@ background-color :#de5758;
     </property>
     <property name="font">
      <font>
+      <family>Segoe UI</family>
       <pointsize>36</pointsize>
       <weight>75</weight>
       <bold>true</bold>
@@ -198,7 +199,7 @@ background-color :#de5758;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -237,7 +238,7 @@ border:2px solid #FBAD25;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -273,7 +274,7 @@ border:2px solid #FBAD25;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>13</pointsize>
      </font>
     </property>
@@ -306,7 +307,7 @@ border:2px solid #FBAD25;
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>18</pointsize>
       <weight>50</weight>
       <italic>false</italic>
@@ -328,13 +329,13 @@ border:2px solid #FBAD25;
      <rect>
       <x>180</x>
       <y>490</y>
-      <width>181</width>
+      <width>201</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <family>Sitka Text</family>
+      <family>Segoe UI</family>
       <pointsize>10</pointsize>
       <weight>75</weight>
       <bold>true</bold>

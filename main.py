@@ -20,6 +20,14 @@ from connect_database import ConnectDatabase
 from PyQt5.QtCore import QRect, QPropertyAnimation, QParallelAnimationGroup
 
 
+import smtplib
+from email.mime.text import MIMEText
+
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email import encoders
+
+
 
 class UIFunctions(QMainWindow):
     def toggleMenu(self, maxWidth, enable):
@@ -151,6 +159,53 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.l4.hide()
 
 
+
+        self.ui.notify.clicked.connect(self.send_email)
+
+
+
+
+
+    def send_email(self):
+
+        db = ConnectDatabase()
+
+        subject = "Email Subject"
+        body = "This is the body of"
+        sender = "yassinecauchy@gmail.com"
+        filename = "design/icons/esprit.png"
+
+        professor = db.get_prof_email_from_name(self.ui.professors_combobox.currentText())
+        recipient = str(professor[0]["email"])
+        password = "ngcpztabrpiebuen"
+
+        msg = MIMEMultipart()
+        msg['Subject'] = subject
+        msg['From'] = sender
+        msg['To'] = recipient
+
+        # Attach the body with the msg instance
+        msg.attach(MIMEText(body, 'plain'))
+        # Open the file to be sent
+        attachment = open(filename, "rb")
+        # Instance of MIMEBase and named as part
+        part = MIMEBase('application', 'octet-stream')
+        # To change the payload into encoded form
+        part.set_payload((attachment).read())
+        # Encode into base64
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', "attachment; filename= " + filename)
+        # Attach the instance 'part' to instance 'msg'
+        msg.attach(part)
+
+        # Close the attachment file
+        attachment.close()
+
+        with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+            smtp_server.login(sender, password)
+            smtp_server.sendmail(sender, recipient, msg.as_string())
+        print("Message sent!")
+        QMessageBox.information(self, "Email Sent", "Recipient has successfully received an email")
 
 
     def closeprofstatistics(self):
@@ -302,7 +357,6 @@ class MainWindow(QMainWindow):    ########################################### Ma
         nbSupervisors = self.ui.supervisors_spinBox.text()
         db = ConnectDatabase()
         db.add_info(dateExam, examStart, nbSupervisors)
-        self.ui.widget_4.setGeometry(10, 50, 861, 451)
         QMessageBox.information(self, "Data inserted", "Exam inserted into Database")
 
 
