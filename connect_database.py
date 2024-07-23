@@ -187,7 +187,7 @@ class ConnectDatabase:
 
     def get_prof_id(self,prof_name):
         self.connect_db()
-        sql = f"""SELECT id FROM users WHERE nom = '{prof_name}';"""
+        sql = f"""SELECT id FROM users WHERE nom = '{prof_name}' and role = 'Professor';"""
         try:
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
@@ -200,7 +200,7 @@ class ConnectDatabase:
 
     def get_prof_email_from_name(self,prof_name):
         self.connect_db()
-        sql = f"""SELECT * FROM users WHERE nom = '{prof_name}';"""
+        sql = f"""SELECT * FROM users WHERE nom = '{prof_name}' and role = 'Professor';"""
         try:
             self.cursor.execute(sql)
             result = self.cursor.fetchall()
@@ -224,5 +224,19 @@ class ConnectDatabase:
         finally:
             self.con.close()
 
+
+    def select_allDates(self):
+        self.connect_db()
+        sql = f"""SELECT distinct datepassage FROM passageexams;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
 
 

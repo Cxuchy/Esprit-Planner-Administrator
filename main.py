@@ -8,7 +8,8 @@ from PyQt5.QtCore import pyqtSlot, QFile, QTextStream
 import platform
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtCore import (QCoreApplication, QPropertyAnimation, QDate, QDateTime, QMetaObject, QObject, QPoint, QRect, QSize, QTime, QUrl, Qt, QEvent)
-from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence, QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient)
+from PyQt5.QtGui import (QBrush, QColor, QConicalGradient, QCursor, QFont, QFontDatabase, QIcon, QKeySequence,
+                         QLinearGradient, QPalette, QPainter, QPixmap, QRadialGradient, QTextCharFormat)
 from PyQt5.QtWidgets import *
 
 import connect_database
@@ -163,27 +164,42 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.notify.clicked.connect(self.send_email)
 
 
+        # Highlights all dates
+        dates_to_fill = db.select_allDates()
+        self.highlight_dates(dates_to_fill)
+
+
+
+
+    def highlight_dates(self, dates):
+        fmt = QTextCharFormat()
+        #bg color
+        fmt.setBackground(QColor("#eb2f30"))
+        #text color
+        fmt.setForeground(QColor("white"))
+
+        # Apply the format to each date
+        for date_dict in dates:
+            date = date_dict['datepassage']
+            qdate = QDate(date.year, date.month, date.day)
+            self.ui.calendarWidget.setDateTextFormat(qdate, fmt)
 
 
 
     def send_email(self):
 
         db = ConnectDatabase()
-
-        subject = "Email Subject"
-        body = "This is the body of"
+        subject = "Exam Scheduling is available"
+        body = "Dear Professor, \n \nWe are excited to announce that the planning section on our Esprit Planner website is now available. \nPlease log in to the website to make your choices.\nLooking forward to your participation! \n\nBest regards, \nAdministrator from Esprit"
         sender = "yassinecauchy@gmail.com"
         filename = "design/icons/esprit.png"
-
         professor = db.get_prof_email_from_name(self.ui.professors_combobox.currentText())
         recipient = str(professor[0]["email"])
         password = "ngcpztabrpiebuen"
-
         msg = MIMEMultipart()
         msg['Subject'] = subject
         msg['From'] = sender
         msg['To'] = recipient
-
         # Attach the body with the msg instance
         msg.attach(MIMEText(body, 'plain'))
         # Open the file to be sent
@@ -197,7 +213,6 @@ class MainWindow(QMainWindow):    ########################################### Ma
         part.add_header('Content-Disposition', "attachment; filename= " + filename)
         # Attach the instance 'part' to instance 'msg'
         msg.attach(part)
-
         # Close the attachment file
         attachment.close()
 
@@ -207,13 +222,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
         print("Message sent!")
         QMessageBox.information(self, "Email Sent", "Recipient has successfully received an email")
 
-
     def closeprofstatistics(self):
         self.ui.statistics_widget.setGeometry(19, 50, 851, 451)
-
         self.ui.label_2.show()
         self.ui.professors_combobox.show()
-
         self.ui.label_3.hide()
         self.ui.label_17.hide()
         self.ui.l1.hide()
@@ -225,27 +237,21 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.l4.hide()
 
     def on_professors_combobox_changed(self):
-
         # getting the actual value of the combobox
         professor_name = self.ui.professors_combobox.currentText()
         db = ConnectDatabase()
         professor = db.get_specific_professor(professor_name)
-
         self.ui.l1.setText(str(professor[0]["identifier"]))
         self.ui.l2.setText(str(professor[0]["nom"]))
         self.ui.l3.setText(str(professor[0]["email"]))
         self.ui.l4.setText(str(professor[0]["phonenumber"]))
-
         if(professor[0]["hasplanning"] == 0):
             self.ui.notchosen_widget.show()
         else:
             self.ui.notchosen_widget.hide()
 
-
-
         self.ui.label_2.hide()
         self.ui.professors_combobox.hide()
-
         self.ui.label_3.show()
         self.ui.label_17.show()
         self.ui.l1.show()
@@ -255,8 +261,6 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.l3.show()
         self.ui.label_20.show()
         self.ui.l4.show()
-
-
         print(professor_name)
         #looking for the id of the professor with that name and getting its planning
 
@@ -365,6 +369,8 @@ class MainWindow(QMainWindow):    ########################################### Ma
         ########################################################################
         self.show()
         ## ==> END ##
+        dates_to_fill = db.select_allDates()
+        self.highlight_dates(dates_to_fill)
 
 #Login Class
 class LoginApp(QDialog):

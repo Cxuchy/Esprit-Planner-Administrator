@@ -123,7 +123,7 @@ border-radius:0px solid;</string>
             </property>
             <property name="icon">
              <iconset>
-              <normalon>design/icons/list.png</normalon>
+              <normalon>../../.designer/backup/design/icons/list.png</normalon>
              </iconset>
             </property>
            </widget>
@@ -152,7 +152,7 @@ border-radius:0px solid;</string>
            <string/>
           </property>
           <property name="pixmap">
-           <pixmap>design/icons/esprit_small.png</pixmap>
+           <pixmap>../../.designer/backup/design/icons/esprit_small.png</pixmap>
           </property>
          </widget>
          <widget class="QLabel" name="label_4">
@@ -310,7 +310,7 @@ background-color: #de5758;
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/home.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/home.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -376,7 +376,7 @@ background-color: #de5758;
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/plus.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/plus.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -448,7 +448,7 @@ background-color:#de5758;
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/dashboard.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/dashboard.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -517,7 +517,7 @@ background-color: #de5758;
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/user-interface.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/user-interface.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -586,7 +586,7 @@ background-color: #de5758;
             </property>
             <property name="icon">
              <iconset>
-              <normalon>design/icons/logout.png</normalon>
+              <normalon>../../.designer/backup/design/icons/logout.png</normalon>
              </iconset>
             </property>
            </widget>
@@ -618,7 +618,7 @@ background-color: #de5758;
 border-radius:20px;</string>
             </property>
             <property name="currentIndex">
-             <number>2</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label">
@@ -891,7 +891,7 @@ border:2px solid black;</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/close.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/close.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -901,7 +901,7 @@ border:2px solid black;</string>
                <rect>
                 <x>20</x>
                 <y>50</y>
-                <width>861</width>
+                <width>851</width>
                 <height>451</height>
                </rect>
               </property>
@@ -939,14 +939,12 @@ border-radius:20px;</string>
                </property>
                <property name="font">
                 <font>
-                 <family>Segoe UI</family>
                  <pointsize>-1</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">/* General QTableWidget styling */
 QTableWidget {
-    border: 1px solid #eb2f30;
     border-radius: 5px;
     gridline-color: #eb2f30;
     font-size: 14px;
@@ -1097,7 +1095,7 @@ background-color :#de5758;
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/plus.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/plus.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -1513,7 +1511,7 @@ border:2px solid black;</string>
                </property>
                <property name="icon">
                 <iconset>
-                 <normalon>design/icons/close.png</normalon>
+                 <normalon>../../.designer/backup/design/icons/close.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -1606,22 +1604,20 @@ border-radius:20px;</string>
               <widget class="QTableWidget" name="complaints_table">
                <property name="geometry">
                 <rect>
-                 <x>50</x>
+                 <x>30</x>
                  <y>30</y>
-                 <width>771</width>
+                 <width>801</width>
                  <height>351</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Segoe UI</family>
                  <pointsize>-1</pointsize>
                 </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">/* General QTableWidget styling */
 QTableWidget {
-    border: 1px solid #eb2f30;
     border-radius: 5px;
     gridline-color: #eb2f30;
     font-size: 14px;
@@ -1789,7 +1785,7 @@ border:2px solid black;
                 <property name="geometry">
                  <rect>
                   <x>40</x>
-                  <y>20</y>
+                  <y>30</y>
                   <width>241</width>
                   <height>41</height>
                  </rect>
@@ -1828,7 +1824,7 @@ border:2px solid black;</string>
                 </property>
                 <property name="icon">
                  <iconset>
-                  <normalon>design/icons/close.png</normalon>
+                  <normalon>../../.designer/backup/design/icons/close.png</normalon>
                  </iconset>
                 </property>
                </widget>

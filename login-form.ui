@@ -55,8 +55,11 @@ border:2px solid #FBAD25;
 
 }</string>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <property name="placeholderText">
-     <string>..........</string>
+     <string>......................................................................</string>
     </property>
    </widget>
    <widget class="QLineEdit" name="password_textfield">
@@ -91,8 +94,11 @@ border:2px solid #FBAD25;
     <property name="echoMode">
      <enum>QLineEdit::Password</enum>
     </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
     <property name="placeholderText">
-     <string>.............</string>
+     <string>......................................................................</string>
     </property>
    </widget>
    <widget class="QPushButton" name="login_btn">
@@ -107,7 +113,7 @@ border:2px solid #FBAD25;
     <property name="font">
      <font>
       <family>Segoe UI</family>
-      <pointsize>11</pointsize>
+      <pointsize>12</pointsize>
       <weight>75</weight>
       <bold>true</bold>
      </font>
@@ -127,7 +133,7 @@ background-color :#de5758;
 }</string>
     </property>
     <property name="text">
-     <string>S i g n  U p</string>
+     <string>Sign Up</string>
     </property>
    </widget>
    <widget class="QLabel" name="label">
