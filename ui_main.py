@@ -453,12 +453,10 @@ class Ui_MainWindow(object):
         self.tableWidget = QtWidgets.QTableWidget(self.widget_4)
         self.tableWidget.setGeometry(QtCore.QRect(409, 100, 431, 331))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
         font.setPointSize(-1)
         self.tableWidget.setFont(font)
         self.tableWidget.setStyleSheet("/* General QTableWidget styling */\n"
 "QTableWidget {\n"
-"    border: 1px solid #eb2f30;\n"
 "    border-radius: 5px;\n"
 "    gridline-color: #eb2f30;\n"
 "    font-size: 14px;\n"
@@ -825,14 +823,12 @@ class Ui_MainWindow(object):
 "border-radius:20px;")
         self.widget_6.setObjectName("widget_6")
         self.complaints_table = QtWidgets.QTableWidget(self.widget_6)
-        self.complaints_table.setGeometry(QtCore.QRect(50, 30, 771, 351))
+        self.complaints_table.setGeometry(QtCore.QRect(30, 30, 801, 351))
         font = QtGui.QFont()
-        font.setFamily("Segoe UI")
         font.setPointSize(-1)
         self.complaints_table.setFont(font)
         self.complaints_table.setStyleSheet("/* General QTableWidget styling */\n"
 "QTableWidget {\n"
-"    border: 1px solid #eb2f30;\n"
 "    border-radius: 5px;\n"
 "    gridline-color: #eb2f30;\n"
 "    font-size: 14px;\n"
@@ -944,7 +940,7 @@ class Ui_MainWindow(object):
         self.resolution_field.setStyleSheet("background-color : white")
         self.resolution_field.setObjectName("resolution_field")
         self.label_16 = QtWidgets.QLabel(self.resolution_message_frame)
-        self.label_16.setGeometry(QtCore.QRect(40, 20, 241, 41))
+        self.label_16.setGeometry(QtCore.QRect(40, 30, 241, 41))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(17)
