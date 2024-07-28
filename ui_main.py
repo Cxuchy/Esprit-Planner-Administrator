@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(1194, 608)
+        MainWindow.resize(1257, 610)
         MainWindow.setMinimumSize(QtCore.QSize(1000, 500))
         MainWindow.setStyleSheet("background-color: white")
         self.centralwidget = QtWidgets.QWidget(MainWindow)
@@ -283,7 +283,7 @@ class Ui_MainWindow(object):
 "")
         self.Btn_Logout.setText("")
         icon5 = QtGui.QIcon()
-        icon5.addPixmap(QtGui.QPixmap("design/icons/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
+        icon5.addPixmap(QtGui.QPixmap("../../.designer/backup/design/icons/logout.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
         self.Btn_Logout.setIcon(icon5)
         self.Btn_Logout.setObjectName("Btn_Logout")
         self.verticalLayout_3.addWidget(self.Btn_Logout)
@@ -438,7 +438,7 @@ class Ui_MainWindow(object):
         self.close_add_exam.setIcon(icon6)
         self.close_add_exam.setObjectName("close_add_exam")
         self.widget_4 = QtWidgets.QWidget(self.page_2)
-        self.widget_4.setGeometry(QtCore.QRect(20, 50, 861, 451))
+        self.widget_4.setGeometry(QtCore.QRect(20, 50, 851, 451))
         self.widget_4.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_4.setObjectName("widget_4")
@@ -580,10 +580,156 @@ class Ui_MainWindow(object):
         self.page_1 = QtWidgets.QWidget()
         self.page_1.setObjectName("page_1")
         self.widget_2 = QtWidgets.QWidget(self.page_1)
-        self.widget_2.setGeometry(QtCore.QRect(10, 50, 861, 451))
+        self.widget_2.setGeometry(QtCore.QRect(390, 50, 481, 451))
         self.widget_2.setStyleSheet("background-color:white;\n"
 "border-radius:20px;")
         self.widget_2.setObjectName("widget_2")
+        self.change_prof_status = QtWidgets.QPushButton(self.widget_2)
+        self.change_prof_status.setGeometry(QtCore.QRect(350, 340, 120, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.change_prof_status.setFont(font)
+        self.change_prof_status.setStyleSheet("\n"
+"QPushButton#change_prof_status\n"
+"{\n"
+"background-color: #03a9f4;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#change_prof_status:pressed\n"
+"{\n"
+"background-color :#4f93ff;  \n"
+"}")
+        self.change_prof_status.setObjectName("change_prof_status")
+        self.label_29 = QtWidgets.QLabel(self.widget_2)
+        self.label_29.setGeometry(QtCore.QRect(0, 330, 341, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_29.setFont(font)
+        self.label_29.setStyleSheet("")
+        self.label_29.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_29.setObjectName("label_29")
+        self.label_30 = QtWidgets.QLabel(self.widget_2)
+        self.label_30.setGeometry(QtCore.QRect(40, 360, 301, 21))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(7)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_30.setFont(font)
+        self.label_30.setStyleSheet("")
+        self.label_30.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_30.setObjectName("label_30")
+        self.label_31 = QtWidgets.QLabel(self.widget_2)
+        self.label_31.setGeometry(QtCore.QRect(10, 30, 271, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(21)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_31.setFont(font)
+        self.label_31.setStyleSheet("")
+        self.label_31.setObjectName("label_31")
+        self.label_32 = QtWidgets.QLabel(self.widget_2)
+        self.label_32.setGeometry(QtCore.QRect(10, 210, 271, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_32.setFont(font)
+        self.label_32.setStyleSheet("")
+        self.label_32.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_32.setObjectName("label_32")
+        self.label_33 = QtWidgets.QLabel(self.widget_2)
+        self.label_33.setGeometry(QtCore.QRect(10, 240, 211, 21))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_33.setFont(font)
+        self.label_33.setStyleSheet("")
+        self.label_33.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_33.setObjectName("label_33")
+        self.sat_spinbox = QtWidgets.QSpinBox(self.widget_2)
+        self.sat_spinbox.setGeometry(QtCore.QRect(100, 280, 91, 22))
+        font = QtGui.QFont()
+        font.setPointSize(-1)
+        self.sat_spinbox.setFont(font)
+        self.sat_spinbox.setStyleSheet("QSpinBox {\n"
+"    background-color: #f0f0f0;\n"
+"    border: 1px solid #cccccc;\n"
+"    border-radius: 5px;\n"
+"    padding: 2px 5px;\n"
+"    font-size: 14px;\n"
+"}\n"
+"\n"
+"")
+        self.sat_spinbox.setObjectName("sat_spinbox")
+        self.submit_saturdays_btn = QtWidgets.QPushButton(self.widget_2)
+        self.submit_saturdays_btn.setGeometry(QtCore.QRect(240, 270, 120, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.submit_saturdays_btn.setFont(font)
+        self.submit_saturdays_btn.setStyleSheet("\n"
+"QPushButton#submit_saturdays_btn\n"
+"{\n"
+"background-color: #fb8c00;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#submit_saturdays_btn:pressed\n"
+"{\n"
+"background-color :#fb9118;  \n"
+"}")
+        self.submit_saturdays_btn.setObjectName("submit_saturdays_btn")
+        self.label_39 = QtWidgets.QLabel(self.widget_2)
+        self.label_39.setGeometry(QtCore.QRect(20, 130, 321, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(10)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_39.setFont(font)
+        self.label_39.setStyleSheet("")
+        self.label_39.setAlignment(QtCore.Qt.AlignLeading|QtCore.Qt.AlignLeft|QtCore.Qt.AlignVCenter)
+        self.label_39.setObjectName("label_39")
+        self.notify_all_professors = QtWidgets.QPushButton(self.widget_2)
+        self.notify_all_professors.setGeometry(QtCore.QRect(340, 140, 120, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.notify_all_professors.setFont(font)
+        self.notify_all_professors.setStyleSheet("\n"
+"QPushButton#notify_all_professors\n"
+"{\n"
+"background-color: #f44335;  \n"
+"color :white;\n"
+"border-radius : 5px;\n"
+"\n"
+"}\n"
+"\n"
+"QPushButton#notify_all_professors:pressed\n"
+"{\n"
+"background-color :#fb9118;  \n"
+"}")
+        self.notify_all_professors.setObjectName("notify_all_professors")
         self.label_12 = QtWidgets.QLabel(self.page_1)
         self.label_12.setGeometry(QtCore.QRect(380, 0, 91, 41))
         font = QtGui.QFont()
@@ -594,6 +740,154 @@ class Ui_MainWindow(object):
         self.label_12.setFont(font)
         self.label_12.setStyleSheet("color: rgb(255, 255, 255);")
         self.label_12.setObjectName("label_12")
+        self.widget_5 = QtWidgets.QWidget(self.page_1)
+        self.widget_5.setGeometry(QtCore.QRect(30, 270, 171, 231))
+        self.widget_5.setStyleSheet("background-color:#03a9f4\n"
+";\n"
+"border-radius:20px;")
+        self.widget_5.setObjectName("widget_5")
+        self.label_25 = QtWidgets.QLabel(self.widget_5)
+        self.label_25.setGeometry(QtCore.QRect(0, 160, 171, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_25.setFont(font)
+        self.label_25.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_25.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_25.setObjectName("label_25")
+        self.label_26 = QtWidgets.QLabel(self.widget_5)
+        self.label_26.setGeometry(QtCore.QRect(10, 190, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_26.setFont(font)
+        self.label_26.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_26.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_26.setObjectName("label_26")
+        self.prof_scheduling_label = QtWidgets.QLabel(self.widget_5)
+        self.prof_scheduling_label.setGeometry(QtCore.QRect(0, 20, 171, 141))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(51)
+        font.setBold(True)
+        font.setWeight(75)
+        self.prof_scheduling_label.setFont(font)
+        self.prof_scheduling_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.prof_scheduling_label.setText("")
+        self.prof_scheduling_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.prof_scheduling_label.setObjectName("prof_scheduling_label")
+        self.widget_7 = QtWidgets.QWidget(self.page_1)
+        self.widget_7.setGeometry(QtCore.QRect(30, 50, 171, 211))
+        self.widget_7.setStyleSheet("background-color:#e91e63;\n"
+"border-radius:20px;")
+        self.widget_7.setObjectName("widget_7")
+        self.label_22 = QtWidgets.QLabel(self.widget_7)
+        self.label_22.setGeometry(QtCore.QRect(10, 160, 151, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_22.setFont(font)
+        self.label_22.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_22.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_22.setObjectName("label_22")
+        self.users_count_label = QtWidgets.QLabel(self.widget_7)
+        self.users_count_label.setGeometry(QtCore.QRect(0, 10, 171, 141))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(51)
+        font.setBold(True)
+        font.setWeight(75)
+        self.users_count_label.setFont(font)
+        self.users_count_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.users_count_label.setText("")
+        self.users_count_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.users_count_label.setObjectName("users_count_label")
+        self.widget_8 = QtWidgets.QWidget(self.page_1)
+        self.widget_8.setGeometry(QtCore.QRect(210, 50, 171, 211))
+        self.widget_8.setStyleSheet("background-color:#f44335\n"
+";\n"
+"border-radius:20px;")
+        self.widget_8.setObjectName("widget_8")
+        self.label_23 = QtWidgets.QLabel(self.widget_8)
+        self.label_23.setGeometry(QtCore.QRect(10, 145, 151, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_23.setFont(font)
+        self.label_23.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_23.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_23.setObjectName("label_23")
+        self.label_24 = QtWidgets.QLabel(self.widget_8)
+        self.label_24.setGeometry(QtCore.QRect(10, 175, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_24.setFont(font)
+        self.label_24.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_24.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_24.setObjectName("label_24")
+        self.has_planning_label = QtWidgets.QLabel(self.widget_8)
+        self.has_planning_label.setGeometry(QtCore.QRect(0, 10, 171, 141))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(51)
+        font.setBold(True)
+        font.setWeight(75)
+        self.has_planning_label.setFont(font)
+        self.has_planning_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.has_planning_label.setText("")
+        self.has_planning_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.has_planning_label.setObjectName("has_planning_label")
+        self.widget_9 = QtWidgets.QWidget(self.page_1)
+        self.widget_9.setGeometry(QtCore.QRect(210, 270, 171, 231))
+        self.widget_9.setStyleSheet("background-color:#fb8c00\n"
+";\n"
+"border-radius:20px;")
+        self.widget_9.setObjectName("widget_9")
+        self.label_27 = QtWidgets.QLabel(self.widget_9)
+        self.label_27.setGeometry(QtCore.QRect(0, 160, 171, 31))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_27.setFont(font)
+        self.label_27.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_27.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_27.setObjectName("label_27")
+        self.label_28 = QtWidgets.QLabel(self.widget_9)
+        self.label_28.setGeometry(QtCore.QRect(10, 190, 151, 21))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(11)
+        font.setBold(True)
+        font.setWeight(75)
+        self.label_28.setFont(font)
+        self.label_28.setStyleSheet("color: rgb(255, 255, 255);")
+        self.label_28.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_28.setObjectName("label_28")
+        self.fixed_saturdays_label = QtWidgets.QLabel(self.widget_9)
+        self.fixed_saturdays_label.setGeometry(QtCore.QRect(0, 20, 171, 141))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(51)
+        font.setBold(True)
+        font.setWeight(75)
+        self.fixed_saturdays_label.setFont(font)
+        self.fixed_saturdays_label.setStyleSheet("color: rgb(255, 255, 255);")
+        self.fixed_saturdays_label.setText("")
+        self.fixed_saturdays_label.setAlignment(QtCore.Qt.AlignCenter)
+        self.fixed_saturdays_label.setObjectName("fixed_saturdays_label")
         self.Pages_Widget.addWidget(self.page_1)
         self.page_3 = QtWidgets.QWidget()
         self.page_3.setObjectName("page_3")
@@ -800,7 +1094,7 @@ class Ui_MainWindow(object):
         self.notify.setStyleSheet("\n"
 "QPushButton#notify\n"
 "{\n"
-"background-color :#f44335;  \n"
+"background-color :#e91e63;  \n"
 "color :white;\n"
 "border-radius : 5px;\n"
 "\n"
@@ -830,7 +1124,8 @@ class Ui_MainWindow(object):
         self.complaints_table.setStyleSheet("/* General QTableWidget styling */\n"
 "QTableWidget {\n"
 "    border-radius: 5px;\n"
-"    gridline-color: #eb2f30;\n"
+"    gridline-color: #f44335\n"
+";\n"
 "    font-size: 14px;\n"
 "    color: #333333;\n"
 "    background-color: #f9f9f9;\n"
@@ -838,7 +1133,8 @@ class Ui_MainWindow(object):
 "\n"
 "/* Header styling */\n"
 "QHeaderView::section {\n"
-"    background-color: #eb2f30;\n"
+"    background-color: #f44335\n"
+";\n"
 "    color: white;\n"
 "    padding: 5px;\n"
 "    border: 1px solid #eb2f30;\n"
@@ -968,7 +1264,8 @@ class Ui_MainWindow(object):
         self.reject_btn.setStyleSheet("\n"
 "QPushButton#reject_btn\n"
 "{\n"
-"background-color :#eb2f30;  \n"
+"background-color :#f44335\n"
+";  \n"
 "color :white;\n"
 "border-radius : 5px;\n"
 "\n"
@@ -990,7 +1287,8 @@ class Ui_MainWindow(object):
         self.accept_btn.setStyleSheet("\n"
 "QPushButton#accept_btn\n"
 "{\n"
-"background-color: #40c15e;  \n"
+"background-color: #4caf50\n"
+";  \n"
 "color :white;\n"
 "border-radius : 5px;\n"
 "\n"
@@ -1012,7 +1310,7 @@ class Ui_MainWindow(object):
         self.resolve_btn.setStyleSheet("\n"
 "QPushButton#resolve_btn\n"
 "{\n"
-"background-color: #0055ff;  \n"
+"background-color: #03a9f4;  \n"
 "color :white;\n"
 "border-radius : 5px;\n"
 "\n"
@@ -1040,7 +1338,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Pages_Widget.setCurrentIndex(2)
+        self.Pages_Widget.setCurrentIndex(1)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -1067,7 +1365,23 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Superivisors Required"))
         self.label_11.setText(_translate("MainWindow", "Exams list"))
         self.add_exam_btn.setText(_translate("MainWindow", "Add Exam"))
+        self.change_prof_status.setText(_translate("MainWindow", "Change "))
+        self.label_29.setText(_translate("MainWindow", "Click Here to Enable / Disable Professor Scheduling "))
+        self.label_30.setText(_translate("MainWindow", "Note : enable Scheduling after finishing the exams planification"))
+        self.label_31.setText(_translate("MainWindow", "General Settings"))
+        self.label_32.setText(_translate("MainWindow", "Fix the number of auto affected Saturdays "))
+        self.label_33.setText(_translate("MainWindow", "Supervisons for every professor "))
+        self.submit_saturdays_btn.setText(_translate("MainWindow", "Submit"))
+        self.label_39.setText(_translate("MainWindow", "Notify Profeesors Who don\'t have a plannings yet"))
+        self.notify_all_professors.setText(_translate("MainWindow", "Notify"))
         self.label_12.setText(_translate("MainWindow", "Home"))
+        self.label_25.setText(_translate("MainWindow", "Professors Scheduling"))
+        self.label_26.setText(_translate("MainWindow", "Blocker"))
+        self.label_22.setText(_translate("MainWindow", "Users Count"))
+        self.label_23.setText(_translate("MainWindow", "Users That have "))
+        self.label_24.setText(_translate("MainWindow", "a Planning"))
+        self.label_27.setText(_translate("MainWindow", "Fixed Saturdays "))
+        self.label_28.setText(_translate("MainWindow", "Supervisions"))
         self.label_2.setText(_translate("MainWindow", "Please Select The Desired professor to see it\'s full planning"))
         self.label_3.setText(_translate("MainWindow", "User Details"))
         self.label_17.setText(_translate("MainWindow", "Identifier"))

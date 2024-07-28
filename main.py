@@ -171,6 +171,48 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
 
 
+        # Setting up HOME PAGE #
+        self.ui.users_count_label.setText(str(db.users_count()[0]["number"]))
+        self.ui.has_planning_label.setText(str(db.users_haveplanning()[0]["number"]))
+        self.ui.fixed_saturdays_label.setText(str(db.fixed_saturdays_count()[0]["satsup"]))
+        if(db.get_unlock_exam_status()[0]["unlockex"] == 0):
+            self.ui.prof_scheduling_label.setText("ON")
+        else:
+            self.ui.prof_scheduling_label.setText("OFF")
+        self.ui.submit_saturdays_btn.clicked.connect(self.update_saturday_number)
+        self.ui.change_prof_status.clicked.connect(self.change_unlockexam)
+
+        #End Home Page#
+
+
+
+
+
+
+
+
+    # Home Functions #
+    def update_saturday_number(self):
+        new_sat_number = int(self.ui.sat_spinbox.text())
+        print(new_sat_number)
+        db = ConnectDatabase()
+        db.update_saturday_count(new_sat_number)
+        self.ui.fixed_saturdays_label.setText(str(db.fixed_saturdays_count()[0]["satsup"]))
+    def change_unlockexam(self):
+        db = ConnectDatabase()
+        current_status = db.get_unlock_exam_status()[0]["unlockex"]
+        if(current_status == 0):
+            db.update_unlock_exam(1)
+            self.ui.prof_scheduling_label.setText("OFF")
+        else:
+            db.update_unlock_exam(0)
+            self.ui.prof_scheduling_label.setText("ON")
+
+    #End Home Function#
+
+
+
+
     def highlight_dates(self, dates):
         fmt = QTextCharFormat()
         #bg color

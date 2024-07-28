@@ -240,3 +240,99 @@ class ConnectDatabase:
             self.con.close()
 
 
+
+
+
+
+    def users_count(self):
+        self.connect_db()
+        sql = f"""SELECT count(*) number FROM users WHERE role = 'Professor' ;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+    def users_haveplanning(self):
+        self.connect_db()
+        sql = f"""SELECT count(*) number FROM users WHERE role = 'Professor' and hasplanning = 1 ;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def fixed_saturdays_count(self):
+        self.connect_db()
+        sql = f"""SELECT saturdays_supervisions satsup  FROM settings WHERE id = 1 ;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def get_unlock_exam_status(self):
+        self.connect_db()
+        sql = f"""SELECT unlock_exams unlockex FROM settings WHERE id = 1 ;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def update_unlock_exam(self,status):
+        self.connect_db()
+        sql = f"""
+                    UPDATE settings
+                        SET unlock_exams='{status}'
+                        WHERE id=1;
+                """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def update_saturday_count(self,satcount):
+        self.connect_db()
+        sql = f"""
+                    UPDATE settings
+                        SET saturdays_supervisions='{satcount}'
+                        WHERE id=1;
+                """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+
+
+
+
