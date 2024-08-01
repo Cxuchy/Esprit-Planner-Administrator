@@ -14,10 +14,11 @@ class ConnectDatabase:
             password="",
             database="espritexamplanner"
         )
-        if self.con.is_connected():
-            print("Successfully connected to the database")
-        else:
-            print("db not connected")
+
+        #if self.con.is_connected():
+        #    print("Successfully connected to the database")
+        #else:
+        #    print("db not connected")
 
         #create a cursor for executing sql queries
         self.cursor = self.con.cursor(dictionary=True)
@@ -322,6 +323,48 @@ class ConnectDatabase:
                         SET saturdays_supervisions='{satcount}'
                         WHERE id=1;
                 """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def get_prof_emails_hasnotaplanning(self):
+        self.connect_db()
+        sql = f"""SELECT email FROM users where hasplanning = 0 and role = 'Professor' ;"""
+
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+    def get_prof_planning(self,prof_id):
+        self.connect_db()
+        sql = f"""SELECT r.id,p.datepassage,p.heurepassage FROM passageexams p JOIN requests r ON p.id = r.passageexamid WHERE status = 'accepted' AND userid = '{prof_id}' ORDER BY p.datepassage,p.heurepassage ASC ;"""
+        try:
+            self.cursor.execute(sql)
+            result = self.cursor.fetchall()
+            return result
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+    def delete_exam_planning(self,id):
+        self.connect_db()
+        sql = f"""
+                    DELETE FROM passageexams WHERE id = {id};
+                        """
         try:
             self.cursor.execute(sql)
             self.con.commit()

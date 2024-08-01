@@ -114,9 +114,20 @@
              </sizepolicy>
             </property>
             <property name="styleSheet">
-             <string notr="true">color: rgb(35, 35, 35);
+             <string notr="true">QPushButton 
+{
+color: rgb(255, 255, 255);
 background-color: rgb(35, 35, 35);
-border-radius:0px solid;</string>
+border : 0px solid;
+}
+
+QPushButton:hover 
+{
+background-color: #f44335
+
+;
+}
+</string>
             </property>
             <property name="text">
              <string/>
@@ -142,7 +153,7 @@ border-radius:0px solid;</string>
          <widget class="QLabel" name="label_5">
           <property name="geometry">
            <rect>
-            <x>840</x>
+            <x>830</x>
             <y>10</y>
             <width>51</width>
             <height>51</height>
@@ -158,9 +169,9 @@ border-radius:0px solid;</string>
          <widget class="QLabel" name="label_4">
           <property name="geometry">
            <rect>
-            <x>730</x>
-            <y>20</y>
-            <width>101</width>
+            <x>760</x>
+            <y>9</y>
+            <width>71</width>
             <height>31</height>
            </rect>
           </property>
@@ -176,7 +187,31 @@ border-radius:0px solid;</string>
            <string notr="true">color: rgb(255, 255, 255);</string>
           </property>
           <property name="text">
-           <string>EspritPlanner</string>
+           <string>Esprit</string>
+          </property>
+         </widget>
+         <widget class="QLabel" name="label_34">
+          <property name="geometry">
+           <rect>
+            <x>760</x>
+            <y>32</y>
+            <width>71</width>
+            <height>21</height>
+           </rect>
+          </property>
+          <property name="font">
+           <font>
+            <family>Segoe UI</family>
+            <pointsize>11</pointsize>
+            <weight>75</weight>
+            <bold>true</bold>
+           </font>
+          </property>
+          <property name="styleSheet">
+           <string notr="true">color: rgb(255, 255, 255);</string>
+          </property>
+          <property name="text">
+           <string>Planner</string>
           </property>
          </widget>
         </widget>
@@ -301,7 +336,9 @@ border : 0px solid;
 
 QPushButton:hover 
 {
-background-color: #de5758;
+background-color: #f44335
+
+;
 }
 </string>
                </property>
@@ -367,7 +404,9 @@ border : 0px solid;
 
 QPushButton:hover 
 {
-background-color: #de5758;
+background-color: #f44335
+
+;
 }
 </string>
                </property>
@@ -439,7 +478,8 @@ border : 0px solid;
 
 QPushButton:hover 
 {
-background-color:#de5758;
+background-color:#f44335
+;
 }
 </string>
                </property>
@@ -508,7 +548,8 @@ border : 0px solid;
 
 QPushButton:hover 
 {
-background-color: #de5758;
+background-color: #f44335
+;
 }
 </string>
                </property>
@@ -611,6 +652,7 @@ background-color: #de5758;
             <property name="font">
              <font>
               <family>Segoe UI</family>
+              <pointsize>11</pointsize>
              </font>
             </property>
             <property name="styleSheet">
@@ -618,7 +660,7 @@ background-color: #de5758;
 border-radius:20px;</string>
             </property>
             <property name="currentIndex">
-             <number>1</number>
+             <number>3</number>
             </property>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label">
@@ -655,22 +697,23 @@ border-radius:20px;</string>
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QLabel" name="label_6">
                <property name="geometry">
                 <rect>
-                 <x>50</x>
-                 <y>90</y>
-                 <width>261</width>
+                 <x>0</x>
+                 <y>80</y>
+                 <width>351</width>
                  <height>51</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>19</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>20</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -678,20 +721,23 @@ border-radius:20px;</string>
                <property name="text">
                 <string>Exam Date Manager</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
               </widget>
               <widget class="QLabel" name="label_7">
                <property name="geometry">
                 <rect>
                  <x>30</x>
-                 <y>180</y>
-                 <width>101</width>
+                 <y>170</y>
+                 <width>121</width>
                  <height>41</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>10</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>11</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -704,15 +750,15 @@ border-radius:20px;</string>
                <property name="geometry">
                 <rect>
                  <x>30</x>
-                 <y>250</y>
-                 <width>111</width>
+                 <y>240</y>
+                 <width>211</width>
                  <height>41</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>10</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>11</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -725,28 +771,28 @@ border-radius:20px;</string>
                <property name="geometry">
                 <rect>
                  <x>30</x>
-                 <y>300</y>
+                 <y>290</y>
                  <width>211</width>
                  <height>41</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>10</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>11</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
                </property>
                <property name="text">
-                <string>Number of required supervisors</string>
+                <string>Required supervisors</string>
                </property>
               </widget>
               <widget class="QSpinBox" name="hour_spinBox">
                <property name="geometry">
                 <rect>
                  <x>250</x>
-                 <y>260</y>
+                 <y>250</y>
                  <width>91</width>
                  <height>22</height>
                 </rect>
@@ -772,10 +818,15 @@ border-radius:20px;</string>
                <property name="geometry">
                 <rect>
                  <x>250</x>
-                 <y>310</y>
+                 <y>300</y>
                  <width>91</width>
                  <height>22</height>
                 </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <pointsize>-1</pointsize>
+                </font>
                </property>
                <property name="styleSheet">
                 <string notr="true">QSpinBox {
@@ -798,16 +849,16 @@ border-radius:20px;</string>
               <widget class="QLabel" name="examdate_label">
                <property name="geometry">
                 <rect>
-                 <x>250</x>
-                 <y>190</y>
-                 <width>91</width>
+                 <x>220</x>
+                 <y>180</y>
+                 <width>121</width>
                  <height>21</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>12</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>11</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -815,20 +866,23 @@ border-radius:20px;</string>
                <property name="text">
                 <string>NA</string>
                </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
+               </property>
               </widget>
               <widget class="QLabel" name="label_10">
                <property name="geometry">
                 <rect>
                  <x>60</x>
-                 <y>220</y>
-                 <width>191</width>
-                 <height>16</height>
+                 <y>210</y>
+                 <width>231</width>
+                 <height>20</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>9</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>11</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -840,16 +894,16 @@ border-radius:20px;</string>
               <widget class="QPushButton" name="submit_btn">
                <property name="geometry">
                 <rect>
-                 <x>260</x>
-                 <y>370</y>
-                 <width>81</width>
-                 <height>29</height>
+                 <x>20</x>
+                 <y>350</y>
+                 <width>321</width>
+                 <height>31</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
-                 <family>Sitka Text</family>
-                 <pointsize>10</pointsize>
+                 <family>Segoe UI</family>
+                 <pointsize>13</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -899,14 +953,15 @@ border:2px solid black;</string>
              <widget class="QWidget" name="widget_4" native="true">
               <property name="geometry">
                <rect>
-                <x>20</x>
+                <x>10</x>
                 <y>50</y>
-                <width>851</width>
+                <width>861</width>
                 <height>451</height>
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QCalendarWidget" name="calendarWidget">
@@ -932,9 +987,9 @@ border-radius:20px;</string>
                <property name="geometry">
                 <rect>
                  <x>409</x>
-                 <y>100</y>
+                 <y>80</y>
                  <width>431</width>
-                 <height>331</height>
+                 <height>241</height>
                 </rect>
                </property>
                <property name="font">
@@ -946,18 +1001,18 @@ border-radius:20px;</string>
                 <string notr="true">/* General QTableWidget styling */
 QTableWidget {
     border-radius: 5px;
-    gridline-color: #eb2f30;
+    gridline-color: #f44335;
     font-size: 14px;
     color: #333333;
-    background-color: #f9f9f9;
+    background-color: #e9ecef;
 }
 
 /* Header styling */
 QHeaderView::section {
-    background-color: #eb2f30;
+    background-color: #f44335;
     color: white;
     padding: 5px;
-    border: 1px solid #eb2f30;
+    border: 1px solid #f44335;
     font-weight: bold;
 }
 
@@ -968,7 +1023,7 @@ QTableWidget::item {
 }
 
 QTableWidget::item:selected {
-    background-color: #eb2f30;
+    background-color: #f44335;
     color: white;
 }
 
@@ -978,7 +1033,7 @@ QTableWidget::item:alternate {
 
 /* Grid lines */
 QTableWidget::item {
-    border: 1px solid #eb2f30;
+    border: 1px solid #f44335;
 }
 
 /* Vertical and Horizontal Scrollbar */
@@ -990,7 +1045,7 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background: #eb2f30;
+    background: #f44335;
     min-height: 20px;
 }
 
@@ -1006,7 +1061,7 @@ QScrollBar:horizontal {
 }
 
 QScrollBar::handle:horizontal {
-    background: #eb2f30;
+    background: #f44335;
     min-width: 20px;
 }
 
@@ -1016,11 +1071,16 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
 
 /* Corner button */
 QTableCornerButton::section {
-    background-color: #eb2f30;
-    border: 1px solid #eb2f30;
+    background-color: #f44335;
+    border: 1px solid #f44335;
 }
 </string>
                </property>
+               <column>
+                <property name="text">
+                 <string>ID</string>
+                </property>
+               </column>
                <column>
                 <property name="text">
                  <string>Exam Date</string>
@@ -1040,8 +1100,8 @@ QTableCornerButton::section {
               <widget class="QLabel" name="label_11">
                <property name="geometry">
                 <rect>
-                 <x>550</x>
-                 <y>30</y>
+                 <x>520</x>
+                 <y>10</y>
                  <width>261</width>
                  <height>51</height>
                 </rect>
@@ -1061,16 +1121,16 @@ QTableCornerButton::section {
               <widget class="QPushButton" name="add_exam_btn">
                <property name="geometry">
                 <rect>
-                 <x>280</x>
+                 <x>10</x>
                  <y>350</y>
-                 <width>101</width>
-                 <height>29</height>
+                 <width>361</width>
+                 <height>31</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
                  <family>Segoe UI</family>
-                 <pointsize>10</pointsize>
+                 <pointsize>13</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -1079,7 +1139,7 @@ QTableCornerButton::section {
                 <string notr="true">
 QPushButton#add_exam_btn
 {
-background-color :#eb2f30;  
+background-color: #03a9f4;  
 color :white;
 border-radius : 5px;
 
@@ -1087,7 +1147,7 @@ border-radius : 5px;
 
 QPushButton#add_exam_btn:pressed
 {
-background-color :#de5758;  
+background-color :#21b5f4;  
 }</string>
                </property>
                <property name="text">
@@ -1096,6 +1156,47 @@ background-color :#de5758;
                <property name="icon">
                 <iconset>
                  <normalon>design/icons/plus.png</normalon>
+                </iconset>
+               </property>
+              </widget>
+              <widget class="QPushButton" name="delete_exam_btn">
+               <property name="geometry">
+                <rect>
+                 <x>510</x>
+                 <y>350</y>
+                 <width>201</width>
+                 <height>31</height>
+                </rect>
+               </property>
+               <property name="font">
+                <font>
+                 <family>Segoe UI</family>
+                 <pointsize>13</pointsize>
+                 <weight>75</weight>
+                 <bold>true</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+QPushButton#delete_exam_btn
+{
+background-color :#f44335;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#delete_exam_btn:pressed
+{
+background-color :#de5758;  
+}</string>
+               </property>
+               <property name="text">
+                <string>Delete </string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normalon>design/icons/delete.png</normalon>
                 </iconset>
                </property>
               </widget>
@@ -1115,14 +1216,15 @@ background-color :#de5758;
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QPushButton" name="change_prof_status">
                <property name="geometry">
                 <rect>
                  <x>350</x>
-                 <y>340</y>
+                 <y>370</y>
                  <width>120</width>
                  <height>41</height>
                 </rect>
@@ -1158,7 +1260,7 @@ background-color :#4f93ff;
                <property name="geometry">
                 <rect>
                  <x>0</x>
-                 <y>330</y>
+                 <y>360</y>
                  <width>341</width>
                  <height>31</height>
                 </rect>
@@ -1175,7 +1277,7 @@ background-color :#4f93ff;
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Click Here to Enable / Disable Professor Scheduling </string>
+                <string>Click Here to Lock / Unlock Professor Scheduling </string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1184,10 +1286,10 @@ background-color :#4f93ff;
               <widget class="QLabel" name="label_30">
                <property name="geometry">
                 <rect>
-                 <x>40</x>
-                 <y>360</y>
-                 <width>301</width>
-                 <height>21</height>
+                 <x>20</x>
+                 <y>385</y>
+                 <width>311</width>
+                 <height>20</height>
                 </rect>
                </property>
                <property name="font">
@@ -1202,7 +1304,7 @@ background-color :#4f93ff;
                 <string notr="true"/>
                </property>
                <property name="text">
-                <string>Note : enable Scheduling after finishing the exams planification</string>
+                <string>Note : Unlock Scheduling after finishing the entire exams planification</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1211,8 +1313,8 @@ background-color :#4f93ff;
               <widget class="QLabel" name="label_31">
                <property name="geometry">
                 <rect>
-                 <x>10</x>
-                 <y>30</y>
+                 <x>20</x>
+                 <y>40</y>
                  <width>271</width>
                  <height>41</height>
                 </rect>
@@ -1236,7 +1338,7 @@ background-color :#4f93ff;
                <property name="geometry">
                 <rect>
                  <x>10</x>
-                 <y>210</y>
+                 <y>240</y>
                  <width>271</width>
                  <height>31</height>
                 </rect>
@@ -1263,7 +1365,7 @@ background-color :#4f93ff;
                <property name="geometry">
                 <rect>
                  <x>10</x>
-                 <y>240</y>
+                 <y>270</y>
                  <width>211</width>
                  <height>21</height>
                 </rect>
@@ -1289,10 +1391,10 @@ background-color :#4f93ff;
               <widget class="QSpinBox" name="sat_spinbox">
                <property name="geometry">
                 <rect>
-                 <x>100</x>
-                 <y>280</y>
-                 <width>91</width>
-                 <height>22</height>
+                 <x>350</x>
+                 <y>240</y>
+                 <width>121</width>
+                 <height>21</height>
                 </rect>
                </property>
                <property name="font">
@@ -1315,7 +1417,7 @@ background-color :#4f93ff;
               <widget class="QPushButton" name="submit_saturdays_btn">
                <property name="geometry">
                 <rect>
-                 <x>240</x>
+                 <x>350</x>
                  <y>270</y>
                  <width>120</width>
                  <height>41</height>
@@ -1351,8 +1453,8 @@ background-color :#fb9118;
               <widget class="QLabel" name="label_39">
                <property name="geometry">
                 <rect>
-                 <x>20</x>
-                 <y>130</y>
+                 <x>10</x>
+                 <y>140</y>
                  <width>321</width>
                  <height>31</height>
                 </rect>
@@ -1378,7 +1480,7 @@ background-color :#fb9118;
               <widget class="QPushButton" name="notify_all_professors">
                <property name="geometry">
                 <rect>
-                 <x>340</x>
+                 <x>350</x>
                  <y>140</y>
                  <width>120</width>
                  <height>41</height>
@@ -1498,7 +1600,7 @@ border-radius:20px;</string>
                 <string notr="true">color: rgb(255, 255, 255);</string>
                </property>
                <property name="text">
-                <string>Blocker</string>
+                <string>Locker</string>
                </property>
                <property name="alignment">
                 <set>Qt::AlignCenter</set>
@@ -1797,29 +1899,30 @@ border-radius:20px;</string>
              <widget class="QWidget" name="statistics_widget" native="true">
               <property name="geometry">
                <rect>
-                <x>649</x>
+                <x>659</x>
                 <y>50</y>
-                <width>221</width>
+                <width>211</width>
                 <height>451</height>
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QLabel" name="label_2">
                <property name="geometry">
                 <rect>
-                 <x>150</x>
-                 <y>130</y>
-                 <width>521</width>
+                 <x>50</x>
+                 <y>150</y>
+                 <width>791</width>
                  <height>61</height>
                 </rect>
                </property>
                <property name="font">
                 <font>
                  <family>Segoe UI</family>
-                 <pointsize>13</pointsize>
+                 <pointsize>18</pointsize>
                  <weight>75</weight>
                  <bold>true</bold>
                 </font>
@@ -1831,10 +1934,10 @@ border-radius:20px;</string>
               <widget class="QComboBox" name="professors_combobox">
                <property name="geometry">
                 <rect>
-                 <x>320</x>
-                 <y>210</y>
-                 <width>221</width>
-                 <height>31</height>
+                 <x>290</x>
+                 <y>220</y>
+                 <width>251</width>
+                 <height>41</height>
                 </rect>
                </property>
                <property name="styleSheet">
@@ -2118,16 +2221,17 @@ QComboBox:disabled {
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QLabel" name="label_13">
                <property name="geometry">
                 <rect>
-                 <x>60</x>
+                 <x>30</x>
                  <y>10</y>
-                 <width>511</width>
-                 <height>51</height>
+                 <width>541</width>
+                 <height>41</height>
                 </rect>
                </property>
                <property name="font">
@@ -2140,6 +2244,9 @@ border-radius:20px;</string>
                </property>
                <property name="text">
                 <string/>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
               <widget class="QPushButton" name="close_stats_details">
@@ -2167,8 +2274,8 @@ border:2px solid black;</string>
               <widget class="QWidget" name="notchosen_widget" native="true">
                <property name="geometry">
                 <rect>
-                 <x>39</x>
-                 <y>100</y>
+                 <x>70</x>
+                 <y>120</y>
                  <width>541</width>
                  <height>231</height>
                 </rect>
@@ -2231,6 +2338,360 @@ background-color :#de5758;
                 </property>
                </widget>
               </widget>
+              <widget class="QWidget" name="chosen_widget" native="true">
+               <property name="geometry">
+                <rect>
+                 <x>10</x>
+                 <y>50</y>
+                 <width>591</width>
+                 <height>391</height>
+                </rect>
+               </property>
+               <widget class="QTableWidget" name="planning_table">
+                <property name="geometry">
+                 <rect>
+                  <x>130</x>
+                  <y>10</y>
+                  <width>341</width>
+                  <height>301</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">/* General QTableWidget styling */
+QTableWidget {
+    border-radius: 5px;
+    gridline-color: #f44335;
+    font-size: 14px;
+    color: #333333;
+    background-color: #e9ecef;
+}
+
+/* Header styling */
+QHeaderView::section {
+    background-color: #f44335;
+    color: white;
+    padding: 5px;
+    border: 1px solid #f44335;
+    font-weight: bold;
+}
+
+/* Alternate row colors */
+QTableWidget::item {
+    padding: 5px;
+    border: none;
+}
+
+QTableWidget::item:selected {
+    background-color: #f44335;
+    color: white;
+}
+
+QTableWidget::item:alternate {
+    background-color: #fdd2d2;
+}
+
+/* Grid lines */
+QTableWidget::item {
+    border: 1px solid #f44335;
+}
+
+/* Vertical and Horizontal Scrollbar */
+QScrollBar:vertical {
+    border: none;
+    background: #e0e0e0;
+    width: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:vertical {
+    background: #f44335;
+    min-height: 20px;
+}
+
+QScrollBar::add-line:vertical, QScrollBar::sub-line:vertical {
+    background: none;
+}
+
+QScrollBar:horizontal {
+    border: none;
+    background: #e0e0e0;
+    height: 10px;
+    margin: 0px 0px 0px 0px;
+}
+
+QScrollBar::handle:horizontal {
+    background: #f44335;
+    min-width: 20px;
+}
+
+QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
+    background: none;
+}
+
+/* Corner button */
+QTableCornerButton::section {
+    background-color: #f44335;
+    border: 1px solid #f44335;
+}
+</string>
+                </property>
+                <column>
+                 <property name="text">
+                  <string>id</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Supervision Date</string>
+                 </property>
+                </column>
+                <column>
+                 <property name="text">
+                  <string>Hour</string>
+                 </property>
+                </column>
+               </widget>
+               <widget class="QPushButton" name="add_supervision_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>150</x>
+                  <y>320</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>11</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QPushButton#add_supervision_btn
+{
+background-color: #03a9f4;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#add_supervision_btn:pressed
+{
+background-color :#21b5f4;  
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normalon>design/icons/plus.png</normalon>
+                 </iconset>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="update_supervision_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>240</x>
+                  <y>320</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>11</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QPushButton#update_supervision_btn
+{
+background-color: #fb8c00;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#update_supervision_btn:pressed
+{
+background-color :#fba50e;  
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normalon>design/icons/update.png</normalon>
+                 </iconset>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="delete_supervision_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>330</x>
+                  <y>320</y>
+                  <width>81</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>17</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QPushButton#delete_supervision_btn
+{
+background-color: #f44335;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#delete_supervision_btn:pressed
+{
+background-color :#fb9118;  
+}</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normalon>design/icons/delete.png</normalon>
+                 </iconset>
+                </property>
+               </widget>
+              </widget>
+              <widget class="QFrame" name="exam_manager_frame">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="geometry">
+                <rect>
+                 <x>140</x>
+                 <y>411</y>
+                 <width>321</width>
+                 <height>20</height>
+                </rect>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">border-radius : 10px solid;
+border:2px solid black;
+</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Raised</enum>
+               </property>
+               <property name="lineWidth">
+                <number>12</number>
+               </property>
+               <widget class="QLabel" name="label_35">
+                <property name="geometry">
+                 <rect>
+                  <x>40</x>
+                  <y>30</y>
+                  <width>241</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>17</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:2px solid white;
+</string>
+                </property>
+                <property name="text">
+                 <string>Exam Manager</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="close_exam_manager">
+                <property name="geometry">
+                 <rect>
+                  <x>285</x>
+                  <y>10</y>
+                  <width>25</width>
+                  <height>23</height>
+                 </rect>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border-radius : 10px solid;
+border:2px solid black;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="icon">
+                 <iconset>
+                  <normalon>design/icons/close.png</normalon>
+                 </iconset>
+                </property>
+               </widget>
+               <widget class="QPushButton" name="submit_exam_btn">
+                <property name="geometry">
+                 <rect>
+                  <x>100</x>
+                  <y>330</y>
+                  <width>120</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>11</pointsize>
+                  <weight>75</weight>
+                  <bold>true</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">
+QPushButton#accept_btn
+{
+background-color: #4caf50
+;  
+color :white;
+border-radius : 5px;
+
+}
+
+QPushButton#accept_btn:pressed
+{
+background-color :#55ff7f;  
+}</string>
+                </property>
+                <property name="text">
+                 <string>Submit</string>
+                </property>
+               </widget>
+              </widget>
              </widget>
              <zorder>prof_details_widget</zorder>
              <zorder>label_14</zorder>
@@ -2247,7 +2708,8 @@ background-color :#de5758;
                </rect>
               </property>
               <property name="styleSheet">
-               <string notr="true">background-color:white;
+               <string notr="true">background-color:#e9ecef
+;
 border-radius:20px;</string>
               </property>
               <widget class="QTableWidget" name="complaints_table">
@@ -2268,20 +2730,18 @@ border-radius:20px;</string>
                 <string notr="true">/* General QTableWidget styling */
 QTableWidget {
     border-radius: 5px;
-    gridline-color: #f44335
-;
+    gridline-color: #f44335;
     font-size: 14px;
     color: #333333;
-    background-color: #f9f9f9;
+    background-color: #e9ecef;
 }
 
 /* Header styling */
 QHeaderView::section {
-    background-color: #f44335
-;
+    background-color: #f44335;
     color: white;
     padding: 5px;
-    border: 1px solid #eb2f30;
+    border: 1px solid #f44335;
     font-weight: bold;
 }
 
@@ -2292,7 +2752,7 @@ QTableWidget::item {
 }
 
 QTableWidget::item:selected {
-    background-color: #eb2f30;
+    background-color: #f44335;
     color: white;
 }
 
@@ -2302,7 +2762,7 @@ QTableWidget::item:alternate {
 
 /* Grid lines */
 QTableWidget::item {
-    border: 1px solid #eb2f30;
+    border: 1px solid #f44335;
 }
 
 /* Vertical and Horizontal Scrollbar */
@@ -2314,7 +2774,7 @@ QScrollBar:vertical {
 }
 
 QScrollBar::handle:vertical {
-    background: #eb2f30;
+    background: #f44335;
     min-height: 20px;
 }
 
@@ -2330,7 +2790,7 @@ QScrollBar:horizontal {
 }
 
 QScrollBar::handle:horizontal {
-    background: #eb2f30;
+    background: #f44335;
     min-width: 20px;
 }
 
@@ -2340,8 +2800,8 @@ QScrollBar::add-line:horizontal, QScrollBar::sub-line:horizontal {
 
 /* Corner button */
 QTableCornerButton::section {
-    background-color: #eb2f30;
-    border: 1px solid #eb2f30;
+    background-color: #f44335;
+    border: 1px solid #f44335;
 }
 </string>
                </property>

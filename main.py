@@ -57,7 +57,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)
         db = ConnectDatabase()
-
+        self.ui.Pages_Widget.setCurrentWidget(self.ui.page_2)
         ## TOGGLE/BURGUER MENU
         ########################################################################
         self.ui.Btn_Toggle.clicked.connect(lambda: UIFunctions.toggleMenu(self, 250, True))
@@ -77,6 +77,9 @@ class MainWindow(QMainWindow):    ########################################### Ma
         #log out still not working
         self.ui.Btn_Logout.clicked.connect(lambda: self.ui.widget.setCurrentIndex(1))
 
+
+        #Setting Up Add Exam Page#
+
         #Calendar selection
         self.ui.calendarWidget.selectionChanged.connect(self.calendarDateChanged)
         self.ui.submit_btn.clicked.connect(self.addExamPassage)
@@ -91,9 +94,17 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.complaints_table.setColumnWidth(4, 120)
         self.ui.complaints_table.setColumnWidth(5, 180)
 
+        # preventing double clicking and editing on tables
+        self.ui.complaints_table.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.ui.tableWidget.setEditTriggers(QTableWidget.NoEditTriggers)
+        self.ui.planning_table.setEditTriggers(QTableWidget.NoEditTriggers)
+
 
         self.ui.tableWidget.verticalHeader().setVisible(False)
         self.ui.complaints_table.verticalHeader().setVisible(False)
+
+        self.ui.planning_table.verticalHeader().setVisible(False)
+        self.ui.planning_table.verticalHeader().setVisible(False)
 
         # hiding the frame for resolution message
         self.ui.resolution_message_frame.hide()
@@ -110,6 +121,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         complaints = db.display_pending_complaints()
 
         self.ui.complaints_table.setRowCount(len(complaints))
+
         self.ui.tableWidget.setHorizontalHeaderLabels(["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date", "Resolution Message"])
         row = 0
         for entry in complaints:
@@ -138,7 +150,9 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
         self.ui.add_exam_btn.clicked.connect(self.openaddExam)
         self.ui.close_add_exam.clicked.connect(self.closeaddExam)
-
+        # Highlights all dates
+        dates_to_fill = db.select_allDates()
+        self.highlight_dates(dates_to_fill)
 
         #Professors combobox
         professors_names = db.display_professors()
@@ -146,6 +160,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
             self.ui.professors_combobox.addItem(str(entry["nom"]))
 
         self.ui.professors_combobox.currentIndexChanged.connect(self.on_professors_combobox_changed)
+        self.ui.professors_combobox.currentIndexChanged.connect(self.update_planning_page)
 
         self.ui.close_stats_details.clicked.connect(self.closeprofstatistics)
 
@@ -164,9 +179,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.notify.clicked.connect(self.send_email)
 
 
-        # Highlights all dates
-        dates_to_fill = db.select_allDates()
-        self.highlight_dates(dates_to_fill)
+
 
 
 
@@ -181,9 +194,80 @@ class MainWindow(QMainWindow):    ########################################### Ma
             self.ui.prof_scheduling_label.setText("OFF")
         self.ui.submit_saturdays_btn.clicked.connect(self.update_saturday_number)
         self.ui.change_prof_status.clicked.connect(self.change_unlockexam)
+        self.ui.notify_all_professors.clicked.connect(self.email_all_prof)
 
         #End Home Page#
 
+
+        # statistics page
+        self.ui.exam_manager_frame.hide()
+        self.ui.add_supervision_btn.clicked.connect(self.openexammanager)
+        self.ui.close_exam_manager.clicked.connect(self.closeexammanager)
+        self.ui.update_supervision_btn.clicked.connect(self.openexammanager)
+        # Reading selected data from table
+        self.ui.planning_table.itemSelectionChanged.connect(self.item_selection_planning_changed)
+        # end page
+
+
+        #Add exam Page#
+        self.ui.tableWidget.itemSelectionChanged.connect(self.item_selection_exam_changed)
+        self.ui.delete_exam_btn.clicked.connect(self.delete_exam_planning)
+        #end Page#
+
+
+
+
+
+    # Setting up the Statistics Page#
+
+    def openexammanager(self):
+        self.ui.exam_manager_frame.show()
+    def closeexammanager(self):
+        self.ui.exam_manager_frame.hide()
+
+    def update_planning_page(self):
+        db = ConnectDatabase()
+        # filling the planning table
+        current_prof_name = self.ui.professors_combobox.currentText()
+        current_prof_id = db.get_prof_id(current_prof_name)
+
+        plannings = db.get_prof_planning(current_prof_id[0]['id'])
+
+        self.ui.planning_table.setRowCount(len(plannings))
+        self.ui.planning_table.setHorizontalHeaderLabels(
+            ["Request ID", "Supervision Date", "Hour"])
+        row = 0
+        for entry in plannings:
+            self.ui.planning_table.setHorizontalHeaderLabels(
+                ["Request ID", "Supervision Date", "Hour"])
+
+            passageDate = entry["datepassage"].strftime('%Y-%m-%d')
+
+            self.ui.planning_table.setItem(row, 0, QTableWidgetItem(str(entry["id"])))
+            self.ui.planning_table.setItem(row, 1, QTableWidgetItem(passageDate))
+            self.ui.planning_table.setItem(row, 2, QTableWidgetItem(str(entry["heurepassage"])))
+            row += 1
+    def item_selection_planning_changed(self):
+        selected_items = self.ui.planning_table.selectedItems()
+
+        if selected_items:
+            # Get the row of the first selected item (assuming single row selection)
+            selected_row = selected_items[0].row()
+
+            # Get data for all columns in the selected row
+            row_data = []
+            for column in range(self.ui.planning_table.columnCount()):
+                item = self.ui.planning_table.item(selected_row, column)
+                if item:
+                    row_data.append(item.text())
+                else:
+                    row_data.append("")
+            print("Row data:", row_data)
+        return row_data
+
+
+
+    # End Statistics Page#
 
 
 
@@ -208,15 +292,83 @@ class MainWindow(QMainWindow):    ########################################### Ma
             db.update_unlock_exam(0)
             self.ui.prof_scheduling_label.setText("ON")
 
+    def email_all_prof(self):
+        db = ConnectDatabase()
+        subject = "Exam Scheduling is available"
+        body = "Dear Professor, \n \nWe are excited to announce that the planning section on our Esprit Planner website is now available. \nPlease log in to the website to make your choices.\nLooking forward to your participation! \n\nBest regards, \nAdministrator from Esprit"
+        sender = "yassinecauchy@gmail.com"
+        filename = "design/icons/esprit.png"
+
+        professors = db.get_prof_emails_hasnotaplanning()
+        print(professors)
+        password = "ngcpztabrpiebuen"
+        msg = MIMEMultipart()
+        msg['Subject'] = subject
+        msg['From'] = sender
+        msg['To'] = ", ".join(prof['email'] for prof in professors)
+        # Attach the body with the msg instance
+        msg.attach(MIMEText(body, 'plain'))
+        # Open the file to be sent
+        attachment = open(filename, "rb")
+        # Instance of MIMEBase and named as part
+        part = MIMEBase('application', 'octet-stream')
+        # To change the payload into encoded form
+        part.set_payload((attachment).read())
+        # Encode into base64
+        encoders.encode_base64(part)
+        part.add_header('Content-Disposition', "attachment; filename= " + filename)
+        # Attach the instance 'part' to instance 'msg'
+        msg.attach(part)
+        # Close the attachment file
+        attachment.close()
+
+        for recipient in professors:
+
+            with smtplib.SMTP_SSL('smtp.gmail.com', 465) as smtp_server:
+                smtp_server.login(sender, password)
+                smtp_server.sendmail(sender, recipient["email"], msg.as_string())
+            print("Message sent!")
+        QMessageBox.information(self, "Emails Sent", "Recipients have successfully received an email")
+
     #End Home Function#
 
+
+
+
+    #Add exam functions#
+    def item_selection_exam_changed(self):
+        selected_items = self.ui.tableWidget.selectedItems()
+        if selected_items:
+            # Get the row of the first selected item (assuming single row selection)
+            selected_row = selected_items[0].row()
+            # Get data for all columns in the selected row
+            row_data = []
+            for column in range(self.ui.tableWidget.columnCount()):
+                item = self.ui.tableWidget.item(selected_row, column)
+                if item:
+                    row_data.append(item.text())
+                else:
+                    row_data.append("")
+
+            print("Row data:", row_data)
+        return row_data
+    def delete_exam_planning(self):
+        db = ConnectDatabase()
+        selected_items = self.item_selection_exam_changed()
+        if selected_items:
+            db.delete_exam_planning(selected_items[0])
+            QMessageBox.information(self, "Delete Successfull", "Exam date deleted")
+        del selected_items
+
+
+    #end add exam functions#
 
 
 
     def highlight_dates(self, dates):
         fmt = QTextCharFormat()
         #bg color
-        fmt.setBackground(QColor("#eb2f30"))
+        fmt.setBackground(QColor("#f44335"))
         #text color
         fmt.setForeground(QColor("white"))
 
@@ -289,8 +441,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.l4.setText(str(professor[0]["phonenumber"]))
         if(professor[0]["hasplanning"] == 0):
             self.ui.notchosen_widget.show()
+            self.ui.chosen_widget.hide()
         else:
             self.ui.notchosen_widget.hide()
+            self.ui.chosen_widget.show()
 
         self.ui.label_2.hide()
         self.ui.professors_combobox.hide()
@@ -321,15 +475,18 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
     def openaddExam(self):
         self.ui.calendarWidget.setGeometry(20, 10, 441, 211)
-        self.ui.add_exam_btn.setGeometry(370, 240, 101, 29)
+        self.ui.add_exam_btn.hide()
+        self.ui.delete_exam_btn.hide()
         self.ui.label_11.setGeometry(170, 260, 131, 51)
         self.ui.tableWidget.setGeometry(20, 310, 450, 111)
         self.ui.widget_4.setGeometry(380, 50, 491, 451)
     def closeaddExam(self):
         self.ui.calendarWidget.setGeometry(10, 80, 371, 251)
-        self.ui.add_exam_btn.setGeometry(280, 340, 101, 29)
+        self.ui.add_exam_btn.setGeometry(10, 350, 361, 31)
         self.ui.label_11.setGeometry(490, 30, 261, 51)
-        self.ui.tableWidget.setGeometry(399, 100, 441, 331)
+        self.ui.tableWidget.setGeometry(409, 80, 431, 241)
+        self.ui.add_exam_btn.show()
+        self.ui.delete_exam_btn.show()
 
         self.ui.widget_4.setGeometry(10, 50, 861, 451)
 
@@ -387,14 +544,17 @@ class MainWindow(QMainWindow):    ########################################### Ma
         # Extracting the values and converting the date to a string
 
         self.ui.tableWidget.setRowCount(len(result))
-        self.ui.tableWidget.setHorizontalHeaderLabels(["Exam Date", "Passage Hour", "Supervisors Required"])
+        self.ui.tableWidget.setHorizontalHeaderLabels(["ID","Exam Date", "Passage Hour", "Supervisors Required"])
         row = 0
         for entry in result:
-            self.ui.tableWidget.setHorizontalHeaderLabels(["Exam Date", "Passage Hour", "Supervisors Required"])
-            self.ui.tableWidget.setItem(row,0,QTableWidgetItem(entry["datepassage"].strftime('%Y-%m-%d')))
-            self.ui.tableWidget.setItem(row,1,QTableWidgetItem(str(entry["heurepassage"])))
-            self.ui.tableWidget.setItem(row,2,QTableWidgetItem(str(entry["nbprof_required"])))
+            self.ui.tableWidget.setHorizontalHeaderLabels(["ID","Exam Date", "Passage Hour", "Supervisors Required"])
+            self.ui.tableWidget.setItem(row,0,QTableWidgetItem(str(entry["id"])))
+            self.ui.tableWidget.setItem(row,1,QTableWidgetItem(entry["datepassage"].strftime('%Y-%m-%d')))
+            self.ui.tableWidget.setItem(row,2,QTableWidgetItem(str(entry["heurepassage"])))
+            self.ui.tableWidget.setItem(row,3,QTableWidgetItem(str(entry["nbprof_required"])))
             row+=1
+        #hide id column for end user
+        self.ui.tableWidget.hideColumn(0)
 
 
     def addExamPassage(self):
