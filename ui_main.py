@@ -579,13 +579,14 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.tableWidget.setHorizontalHeaderItem(3, item)
         self.label_11 = QtWidgets.QLabel(self.widget_4)
-        self.label_11.setGeometry(QtCore.QRect(520, 10, 261, 51))
+        self.label_11.setGeometry(QtCore.QRect(500, 10, 261, 51))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(19)
         font.setBold(True)
         font.setWeight(75)
         self.label_11.setFont(font)
+        self.label_11.setAlignment(QtCore.Qt.AlignCenter)
         self.label_11.setObjectName("label_11")
         self.add_exam_btn = QtWidgets.QPushButton(self.widget_4)
         self.add_exam_btn.setGeometry(QtCore.QRect(10, 350, 361, 31))
@@ -611,7 +612,7 @@ class Ui_MainWindow(object):
         self.add_exam_btn.setIcon(icon2)
         self.add_exam_btn.setObjectName("add_exam_btn")
         self.delete_exam_btn = QtWidgets.QPushButton(self.widget_4)
-        self.delete_exam_btn.setGeometry(QtCore.QRect(510, 350, 201, 31))
+        self.delete_exam_btn.setGeometry(QtCore.QRect(430, 350, 361, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(13)
@@ -1263,7 +1264,7 @@ class Ui_MainWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.planning_table.setHorizontalHeaderItem(2, item)
         self.add_supervision_btn = QtWidgets.QPushButton(self.chosen_widget)
-        self.add_supervision_btn.setGeometry(QtCore.QRect(150, 320, 81, 31))
+        self.add_supervision_btn.setGeometry(QtCore.QRect(200, 320, 81, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(11)
@@ -1286,34 +1287,8 @@ class Ui_MainWindow(object):
         self.add_supervision_btn.setText("")
         self.add_supervision_btn.setIcon(icon2)
         self.add_supervision_btn.setObjectName("add_supervision_btn")
-        self.update_supervision_btn = QtWidgets.QPushButton(self.chosen_widget)
-        self.update_supervision_btn.setGeometry(QtCore.QRect(240, 320, 81, 31))
-        font = QtGui.QFont()
-        font.setFamily("Segoe UI")
-        font.setPointSize(11)
-        font.setBold(True)
-        font.setWeight(75)
-        self.update_supervision_btn.setFont(font)
-        self.update_supervision_btn.setStyleSheet("\n"
-"QPushButton#update_supervision_btn\n"
-"{\n"
-"background-color: #fb8c00;  \n"
-"color :white;\n"
-"border-radius : 5px;\n"
-"\n"
-"}\n"
-"\n"
-"QPushButton#update_supervision_btn:pressed\n"
-"{\n"
-"background-color :#fba50e;  \n"
-"}")
-        self.update_supervision_btn.setText("")
-        icon8 = QtGui.QIcon()
-        icon8.addPixmap(QtGui.QPixmap("design/icons/update.png"), QtGui.QIcon.Normal, QtGui.QIcon.On)
-        self.update_supervision_btn.setIcon(icon8)
-        self.update_supervision_btn.setObjectName("update_supervision_btn")
         self.delete_supervision_btn = QtWidgets.QPushButton(self.chosen_widget)
-        self.delete_supervision_btn.setGeometry(QtCore.QRect(330, 320, 81, 31))
+        self.delete_supervision_btn.setGeometry(QtCore.QRect(300, 320, 81, 31))
         font = QtGui.QFont()
         font.setFamily("Segoe UI")
         font.setPointSize(17)
@@ -1338,7 +1313,7 @@ class Ui_MainWindow(object):
         self.delete_supervision_btn.setObjectName("delete_supervision_btn")
         self.exam_manager_frame = QtWidgets.QFrame(self.prof_details_widget)
         self.exam_manager_frame.setEnabled(True)
-        self.exam_manager_frame.setGeometry(QtCore.QRect(140, 411, 321, 20))
+        self.exam_manager_frame.setGeometry(QtCore.QRect(140, 40, 321, 391))
         self.exam_manager_frame.setAutoFillBackground(False)
         self.exam_manager_frame.setStyleSheet("border-radius : 10px solid;\n"
 "border:2px solid black;\n"
@@ -1389,6 +1364,36 @@ class Ui_MainWindow(object):
 "background-color :#55ff7f;  \n"
 "}")
         self.submit_exam_btn.setObjectName("submit_exam_btn")
+        self.label_36 = QtWidgets.QLabel(self.exam_manager_frame)
+        self.label_36.setGeometry(QtCore.QRect(20, 140, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_36.setFont(font)
+        self.label_36.setStyleSheet("border:2px solid white;\n"
+"")
+        self.label_36.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_36.setObjectName("label_36")
+        self.label_37 = QtWidgets.QLabel(self.exam_manager_frame)
+        self.label_37.setGeometry(QtCore.QRect(20, 230, 141, 41))
+        font = QtGui.QFont()
+        font.setFamily("Segoe UI")
+        font.setPointSize(13)
+        font.setBold(False)
+        font.setWeight(50)
+        self.label_37.setFont(font)
+        self.label_37.setStyleSheet("border:2px solid white;\n"
+"")
+        self.label_37.setAlignment(QtCore.Qt.AlignCenter)
+        self.label_37.setObjectName("label_37")
+        self.dates_comboBox = QtWidgets.QComboBox(self.exam_manager_frame)
+        self.dates_comboBox.setGeometry(QtCore.QRect(170, 145, 121, 31))
+        self.dates_comboBox.setObjectName("dates_comboBox")
+        self.hour_spinBox_add = QtWidgets.QSpinBox(self.exam_manager_frame)
+        self.hour_spinBox_add.setGeometry(QtCore.QRect(170, 235, 121, 31))
+        self.hour_spinBox_add.setObjectName("hour_spinBox_add")
         self.prof_details_widget.raise_()
         self.label_14.raise_()
         self.statistics_widget.raise_()
@@ -1621,7 +1626,7 @@ class Ui_MainWindow(object):
         MainWindow.setCentralWidget(self.centralwidget)
 
         self.retranslateUi(MainWindow)
-        self.Pages_Widget.setCurrentIndex(0)
+        self.Pages_Widget.setCurrentIndex(2)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
@@ -1686,6 +1691,8 @@ class Ui_MainWindow(object):
         item.setText(_translate("MainWindow", "Hour"))
         self.label_35.setText(_translate("MainWindow", "Exam Manager"))
         self.submit_exam_btn.setText(_translate("MainWindow", "Submit"))
+        self.label_36.setText(_translate("MainWindow", "Supervision Date"))
+        self.label_37.setText(_translate("MainWindow", "Hour"))
         item = self.complaints_table.horizontalHeaderItem(0)
         item.setText(_translate("MainWindow", "Identifier"))
         item = self.complaints_table.horizontalHeaderItem(1)

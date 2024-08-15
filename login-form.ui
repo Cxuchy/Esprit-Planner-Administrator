@@ -216,7 +216,7 @@ background-color :#de5758;
      <string notr="true">color :black</string>
     </property>
     <property name="text">
-     <string>Sign Up</string>
+     <string>Sign In</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_4">

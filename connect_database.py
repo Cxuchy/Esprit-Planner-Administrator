@@ -374,6 +374,22 @@ class ConnectDatabase:
         finally:
             self.con.close()
 
+    def delete_prof_planning(self, id):
+        self.connect_db()
+        sql = f"""
+                       DELETE FROM requests WHERE id = {id};
+                           """
+        try:
+            self.cursor.execute(sql)
+            self.con.commit()
+        except Exception as e:
+            self.con.rollback()
+            return e
+        finally:
+            self.con.close()
+
+
+
 
 
 

@@ -106,6 +106,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.planning_table.verticalHeader().setVisible(False)
         self.ui.planning_table.verticalHeader().setVisible(False)
 
+
         # hiding the frame for resolution message
         self.ui.resolution_message_frame.hide()
         self.ui.accept_btn.clicked.connect(self.acceptReq)
@@ -122,10 +123,10 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
         self.ui.complaints_table.setRowCount(len(complaints))
 
-        self.ui.tableWidget.setHorizontalHeaderLabels(["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date", "Resolution Message"])
+        self.ui.complaints_table.setHorizontalHeaderLabels(["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date", "Resolution Message"])
         row = 0
         for entry in complaints:
-            self.ui.tableWidget.setHorizontalHeaderLabels(
+            self.ui.complaints_table.setHorizontalHeaderLabels(
                 ["Identifier", "Submission Date", "Submission Message", "Status", "Resolution Date",
                  "Resolution Message"])
             if entry["submissionDate"] is None:
@@ -177,6 +178,7 @@ class MainWindow(QMainWindow):    ########################################### Ma
 
 
         self.ui.notify.clicked.connect(self.send_email)
+        self.ui.delete_supervision_btn.clicked.connect(self.delete_professor_planning)
 
 
 
@@ -203,7 +205,6 @@ class MainWindow(QMainWindow):    ########################################### Ma
         self.ui.exam_manager_frame.hide()
         self.ui.add_supervision_btn.clicked.connect(self.openexammanager)
         self.ui.close_exam_manager.clicked.connect(self.closeexammanager)
-        self.ui.update_supervision_btn.clicked.connect(self.openexammanager)
         # Reading selected data from table
         self.ui.planning_table.itemSelectionChanged.connect(self.item_selection_planning_changed)
         # end page
@@ -262,9 +263,17 @@ class MainWindow(QMainWindow):    ########################################### Ma
                     row_data.append(item.text())
                 else:
                     row_data.append("")
-            print("Row data:", row_data)
-        return row_data
+            print("prof planning:", row_data)
+            return row_data
 
+    def delete_professor_planning(self):
+        db = ConnectDatabase()
+        selected_items = self.item_selection_planning_changed()
+        if selected_items:
+            db.delete_prof_planning(selected_items[0])
+            QMessageBox.information(self, "Delete Successfull", "Exam date deleted")
+            self.update_planning_page()
+        del selected_items
 
 
     # End Statistics Page#
@@ -350,8 +359,8 @@ class MainWindow(QMainWindow):    ########################################### Ma
                 else:
                     row_data.append("")
 
-            print("Row data:", row_data)
-        return row_data
+            print("Exam date:", row_data)
+            return row_data
     def delete_exam_planning(self):
         db = ConnectDatabase()
         selected_items = self.item_selection_exam_changed()
@@ -359,10 +368,8 @@ class MainWindow(QMainWindow):    ########################################### Ma
             db.delete_exam_planning(selected_items[0])
             QMessageBox.information(self, "Delete Successfull", "Exam date deleted")
         del selected_items
-
-
-    #end add exam functions#
-
+        dates = db.select_allDates()
+        self.highlight_dates(dates)
 
 
     def highlight_dates(self, dates):
@@ -377,6 +384,12 @@ class MainWindow(QMainWindow):    ########################################### Ma
             date = date_dict['datepassage']
             qdate = QDate(date.year, date.month, date.day)
             self.ui.calendarWidget.setDateTextFormat(qdate, fmt)
+
+    #end add exam functions#
+
+
+
+
 
 
 

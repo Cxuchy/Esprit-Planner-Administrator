@@ -660,7 +660,7 @@ background-color: #de5758;
 border-radius:20px;</string>
             </property>
             <property name="currentIndex">
-             <number>3</number>
+             <number>2</number>
             </property>
             <widget class="QWidget" name="page_2">
              <widget class="QLabel" name="label">
@@ -1100,7 +1100,7 @@ QTableCornerButton::section {
               <widget class="QLabel" name="label_11">
                <property name="geometry">
                 <rect>
-                 <x>520</x>
+                 <x>500</x>
                  <y>10</y>
                  <width>261</width>
                  <height>51</height>
@@ -1116,6 +1116,9 @@ QTableCornerButton::section {
                </property>
                <property name="text">
                 <string>Exams list</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignCenter</set>
                </property>
               </widget>
               <widget class="QPushButton" name="add_exam_btn">
@@ -1162,9 +1165,9 @@ background-color :#21b5f4;
               <widget class="QPushButton" name="delete_exam_btn">
                <property name="geometry">
                 <rect>
-                 <x>510</x>
+                 <x>430</x>
                  <y>350</y>
-                 <width>201</width>
+                 <width>361</width>
                  <height>31</height>
                 </rect>
                </property>
@@ -2454,7 +2457,7 @@ QTableCornerButton::section {
                <widget class="QPushButton" name="add_supervision_btn">
                 <property name="geometry">
                  <rect>
-                  <x>150</x>
+                  <x>200</x>
                   <y>320</y>
                   <width>81</width>
                   <height>31</height>
@@ -2492,51 +2495,10 @@ background-color :#21b5f4;
                  </iconset>
                 </property>
                </widget>
-               <widget class="QPushButton" name="update_supervision_btn">
-                <property name="geometry">
-                 <rect>
-                  <x>240</x>
-                  <y>320</y>
-                  <width>81</width>
-                  <height>31</height>
-                 </rect>
-                </property>
-                <property name="font">
-                 <font>
-                  <family>Segoe UI</family>
-                  <pointsize>11</pointsize>
-                  <weight>75</weight>
-                  <bold>true</bold>
-                 </font>
-                </property>
-                <property name="styleSheet">
-                 <string notr="true">
-QPushButton#update_supervision_btn
-{
-background-color: #fb8c00;  
-color :white;
-border-radius : 5px;
-
-}
-
-QPushButton#update_supervision_btn:pressed
-{
-background-color :#fba50e;  
-}</string>
-                </property>
-                <property name="text">
-                 <string/>
-                </property>
-                <property name="icon">
-                 <iconset>
-                  <normalon>design/icons/update.png</normalon>
-                 </iconset>
-                </property>
-               </widget>
                <widget class="QPushButton" name="delete_supervision_btn">
                 <property name="geometry">
                  <rect>
-                  <x>330</x>
+                  <x>300</x>
                   <y>320</y>
                   <width>81</width>
                   <height>31</height>
@@ -2689,6 +2651,82 @@ background-color :#55ff7f;
                 </property>
                 <property name="text">
                  <string>Submit</string>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_36">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>140</y>
+                  <width>141</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>13</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:2px solid white;
+</string>
+                </property>
+                <property name="text">
+                 <string>Supervision Date</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QLabel" name="label_37">
+                <property name="geometry">
+                 <rect>
+                  <x>20</x>
+                  <y>230</y>
+                  <width>141</width>
+                  <height>41</height>
+                 </rect>
+                </property>
+                <property name="font">
+                 <font>
+                  <family>Segoe UI</family>
+                  <pointsize>13</pointsize>
+                  <weight>50</weight>
+                  <bold>false</bold>
+                 </font>
+                </property>
+                <property name="styleSheet">
+                 <string notr="true">border:2px solid white;
+</string>
+                </property>
+                <property name="text">
+                 <string>Hour</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignCenter</set>
+                </property>
+               </widget>
+               <widget class="QComboBox" name="dates_comboBox">
+                <property name="geometry">
+                 <rect>
+                  <x>170</x>
+                  <y>145</y>
+                  <width>121</width>
+                  <height>31</height>
+                 </rect>
+                </property>
+               </widget>
+               <widget class="QSpinBox" name="hour_spinBox_add">
+                <property name="geometry">
+                 <rect>
+                  <x>170</x>
+                  <y>235</y>
+                  <width>121</width>
+                  <height>31</height>
+                 </rect>
                 </property>
                </widget>
               </widget>
